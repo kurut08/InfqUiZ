@@ -12,26 +12,23 @@ public class Questions {
     private String a;
     private String b;
     private String c;
-    private String d;
     private String correct;
 
     //Question with 4 answers, 1-4 good
-    public Questions(String question, String a, String b, String c, String d, String correct){
+    public Questions(String question, String a, String b, String c, String correct){
         super();
-        this.question = question;
+
         this.a = a;
         this.b = b;
         this.c = c;
-        this.d = d;
-        this.correct = correct;
+        this.question = question;
     }
 
     //Questions with answer "True or False"
-    public Questions(String question, String a, String b, String correct){
+    public Questions(String question, String a, String correct){
         super();
         this.question = question;
         this.a = a;
-        this.b = b;
         this.correct = correct;
     }
 
@@ -73,14 +70,6 @@ public class Questions {
 
     public void setC(String c) {
         this.c = c;
-    }
-
-    public String getD() {
-        return d;
-    }
-
-    public void setD(String d) {
-        this.d = d;
     }
 
     public String getCorrect() {
