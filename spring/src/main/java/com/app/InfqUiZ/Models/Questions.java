@@ -9,29 +9,32 @@ public class Questions {
     private int id;
     @Column(nullable = false)
     private String question;
-    private String a;
-    private String b;
-    private String c;
-    private String correct;
+    private String answer_a;
+    private String answer_b;
+    private String answer_c;
+    @Column(nullable = false)
+    private String answer_correct;
 
     //Question with 4 answers, 1-4 good
-    public Questions(String question, String a, String b, String c, String correct){
+    public Questions(String question, String answer_a, String answer_b, String answer_c, String answer_correct){
         super();
-
-        this.a = a;
-        this.b = b;
-        this.c = c;
         this.question = question;
+        this.answer_a = answer_a;
+        this.answer_b = answer_b;
+        this.answer_c = answer_c;
+        this.answer_correct = answer_correct;
     }
 
     //Questions with answer "True or False"
-    public Questions(String question, String a, String correct){
+    public Questions(String question, String answer_a, String answer_correct){
         super();
         this.question = question;
-        this.a = a;
-        this.correct = correct;
+        this.answer_a = answer_a;
+        this.answer_correct = answer_correct;
     }
-
+    public Questions(){
+        super();
+    }
     public int getId() {
         return id;
     }
@@ -48,35 +51,35 @@ public class Questions {
         this.question = question;
     }
 
-    public String getA() {
-        return a;
+    public String getAnswer_a() {
+        return answer_a;
     }
 
-    public void setA(String a) {
-        this.a = a;
+    public void setAnswer_a(String answer_a) {
+        this.answer_a = answer_a;
     }
 
-    public String getB() {
-        return b;
+    public String getAnswer_b() {
+        return answer_b;
     }
 
-    public void setB(String b) {
-        this.b = b;
+    public void setAnswer_b(String answer_b) {
+        this.answer_b = answer_b;
     }
 
-    public String getC() {
-        return c;
+    public String getAnswer_c() {
+        return answer_c;
     }
 
-    public void setC(String c) {
-        this.c = c;
+    public void setAnswer_c(String answer_c) {
+        this.answer_c = answer_c;
     }
 
-    public String getCorrect() {
-        return correct;
+    public String getAnswer_correct() {
+        return answer_correct;
     }
 
-    public void setCorrect(String correct) {
-        this.correct = correct;
+    public void setAnswer_correct(String answer_correct) {
+        this.answer_correct = answer_correct;
     }
 }
