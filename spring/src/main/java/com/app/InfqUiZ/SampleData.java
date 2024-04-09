@@ -6,7 +6,7 @@ import com.app.InfqUiZ.Repository.QuestionsRepository;
 public class SampleData {
     public void FillDB(QuestionsRepository questionsRepository){
         System.out.println("\n############################"+"EXAMPLE DATA FILING"+"\n\n############################");
-        Questions question1 = new Questions("Jaka firma stworzyła Jave?", "Miscrosoft", "Red Bull", "Docker", "Oracle");
+        Questions question1 = new Questions("Jaka firma stworzyła Jave?", "Microsoft", "Red Bull", "Docker", "Oracle");
         Questions question2 = new Questions("Jaki jest domyślny zakres w javie?", "using", "import", "module", "package");
         Questions question3 = new Questions("Czy w metodzie niestatycznej można się bezpośrednio odwoływać do pól statycznych klasy", "nie", "tak");
         questionsRepository.save(question1);
