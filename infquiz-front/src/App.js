@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from "./components/home/Home";
+import Tests from "./components/tests/Tests";
+import Flashcards from "./components/flashcards/Flashcards";
+import QuickQuestion from "./components/quickQuestion/QuickQuestion";
+
+class App extends Component {
+
+
+  render() {
+
+    return (
+        <div className="App">
+          <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/tests" element={<Tests />} />
+                <Route path="/flashcards" element={<Flashcards />} />
+                <Route path="/quickquestion" element={<QuickQuestion />} />
+
+
+            </Routes>
+          </BrowserRouter>
+
+        </div>
+    );
+  }
 }
 
 export default App;
