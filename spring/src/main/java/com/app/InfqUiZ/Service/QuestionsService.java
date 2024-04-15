@@ -21,7 +21,6 @@ public class QuestionsService {
     }
 
     public Questions getRandomQuestion(){
-        //Needs to change range of random
         long range = questionsRepository.count();
         return questionsRepository.findQuestionsById(random.nextInt(1, (int) range+1));
     }
@@ -32,7 +31,7 @@ public class QuestionsService {
 
     public List<Questions> getRandomTest() {
         List<Questions> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
            list.add(getRandomQuestion());
         }
         return list;

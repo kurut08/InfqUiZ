@@ -14,23 +14,27 @@ public class Questions {
     private String answer_c;
     @Column(nullable = false)
     private String answer_correct;
+    @Column(nullable = false)
+    private int category;
 
     //Question with 4 answers, 1-4 good
-    public Questions(String question, String answer_a, String answer_b, String answer_c, String answer_correct){
+    public Questions(String question, String answer_a, String answer_b, String answer_c, String answer_correct, int category){
         super();
         this.question = question;
         this.answer_a = answer_a;
         this.answer_b = answer_b;
         this.answer_c = answer_c;
         this.answer_correct = answer_correct;
+        this.category = category;
     }
 
     //Questions with answer "True or False"
-    public Questions(String question, String answer_a, String answer_correct){
+    public Questions(String question, String answer_a, String answer_correct, int category){
         super();
         this.question = question;
         this.answer_a = answer_a;
         this.answer_correct = answer_correct;
+        this.category = category;
     }
     public Questions(){
         super();
@@ -81,5 +85,13 @@ public class Questions {
 
     public void setAnswer_correct(String answer_correct) {
         this.answer_correct = answer_correct;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
     }
 }

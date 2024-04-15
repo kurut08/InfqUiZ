@@ -1,5 +1,6 @@
 package com.app.InfqUiZ;
 
+import com.app.InfqUiZ.Repository.CardsRepository;
 import com.app.InfqUiZ.Repository.QuestionsRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,10 +14,10 @@ public class InfqUiZApplication {
 		SpringApplication.run(InfqUiZApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner run(QuestionsRepository questionsRepository){
+	CommandLineRunner run(QuestionsRepository questionsRepository, CardsRepository cardsRepository){
 		return args ->{
 			SampleData sampleData = new SampleData();
-			sampleData.FillDB(questionsRepository);
+			sampleData.FillDB(questionsRepository, cardsRepository);
 		};
 	}
 }

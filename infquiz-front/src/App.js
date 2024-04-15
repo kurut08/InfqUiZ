@@ -40,7 +40,7 @@ const exampleQuestion = question;
           <p>A.{exampleQuestion.answer_a}</p>
           <p>B.{exampleQuestion.answer_b}</p>
           <p>C.{exampleQuestion.answer_c}</p>
-          <p>D.{exampleQuestion.answer_correct}</p>
+          <p>D.{exampleQuestion.answer_correct}{exampleQuestion[0]}</p>
         
       </header>
     </div>
