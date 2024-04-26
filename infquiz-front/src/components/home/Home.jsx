@@ -1,15 +1,24 @@
 import './Home.css';
 import React from "react";
+import logo from '../../logo.png';
 import {useNavigate} from "react-router-dom";
 
 function Home() {
     const navigate = useNavigate();
 
     const navigateToTests = () => {
-        navigate('/tests');
+        navigate('/tests/category', {
+            state: {
+                type: 'tests'
+            }
+        });
     };
     const navigateToFlashcards = () => {
-        navigate('/flashcards');
+        navigate('/flashcards/category', {
+            state: {
+                type: 'flashcards'
+            }
+        });
     };
     const navigateToQuickQuestion = () => {
         navigate('/quickQuestion');
@@ -24,7 +33,7 @@ function Home() {
                 <div id="header">
                     <div className="logo-container" onClick={navigateToHome}>
                         <img
-                            src="https://cdn.discordapp.com/attachments/1112468265529258126/1229157476650324038/logo.png?ex=662ea91b&is=661c341b&hm=74c8b53e1281962398c9470abfd650db286249a1483db84f097aa7772c205882&"
+                            src={logo}
                             alt="App Logo" className="app-logo"/>
                     </div>
                 </div>
@@ -42,7 +51,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="footer">
-                    <h4 id="corpo">SSR Inc.</h4>
+                    <h4 id="corpo">SSR Association</h4>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import Home from "./components/home/Home";
 import Tests from "./components/tests/Tests";
 import Flashcards from "./components/flashcards/Flashcards";
 import QuickQuestion from "./components/quickQuestion/QuickQuestion";
+import Category from "./components/category/Category";
 
 class App extends Component {
 
@@ -18,9 +19,18 @@ class App extends Component {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/tests" element={<Tests />} />
-                <Route path="/flashcards" element={<Flashcards />} />
+                <Route path="/tests/category" element={<Category />} />
+                <Route path="/tests/category/java" element={<Tests />} />
+                <Route path="/tests/category/os" element={<Tests />} />
+                <Route path="/tests/category/db" element={<Tests />} />
+                <Route path="/tests/category/cg" element={<Tests />} />
+                <Route path="/flashcards/category" element={<Category />} />
+                <Route path="/flashcards/category/java" element={<Flashcards />} />
+                <Route path="/flashcards/category/os" element={<Flashcards />} />
+                <Route path="/flashcards/category/db" element={<Flashcards />} />
+                <Route path="/flashcards/category/cg" element={<Flashcards />} />
                 <Route path="/quickquestion" element={<QuickQuestion />} />
+
 
 
             </Routes>
