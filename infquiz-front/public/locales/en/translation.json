@@ -1,0 +1,13 @@
+{
+  "home.quick.question": "Quick question",
+  "home.40questions": "40 questions test",
+  "home.flashcards": "Flashcards",
+
+  "flashcard.firstpage": "1st page",
+  "flashcard.secondpage": "2nd page",
+
+  "category.java": "Java",
+  "category.databases": "Databases",
+  "category.computergraphics": "Computer Graphics",
+  "category.operativesystems": "Operative Systems"
+}

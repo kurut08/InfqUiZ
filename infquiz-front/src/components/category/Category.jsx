@@ -2,6 +2,8 @@ import './Category.css';
 import React from "react";
 import logo from '../../logo.png';
 import {useNavigate, useLocation} from "react-router-dom";
+import {useTranslation} from "react-i18next";
+
 
 function Category() {
     const navigate = useNavigate();
@@ -38,6 +40,7 @@ function Category() {
     const navigateToHome = () => {
         navigate('/');
     };
+    const { t, i18n } = useTranslation();
 
     return(
         <div>
@@ -52,16 +55,16 @@ function Category() {
                 <div id="category-content">
                     <div className="category-grid">
                         <div className="category" onClick={navigateToJava}>
-                            <h1>Java</h1>
+                            <h1>{t("category.java")}</h1>
                         </div>
                         <div className="category" onClick={navigateToDatabases}>
-                            <h1>Databases</h1>
+                            <h1>{t("category.databases")}</h1>
                         </div>
                         <div className="category" onClick={navigateToComputerGraphics}>
-                            <h1>Computer Graphics</h1>
+                            <h1>{t("category.computergraphics")}</h1>
                         </div>
                         <div className="category" onClick={navigateToOperativeSystem}>
-                            <h1>Operative System</h1>
+                            <h1>{t("category.operativesystems")}</h1>
                         </div>
                     </div>
                 </div>

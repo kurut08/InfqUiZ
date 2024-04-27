@@ -2,6 +2,7 @@ import './Home.css';
 import React from "react";
 import logo from '../../logo.png';
 import {useNavigate} from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Home() {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ function Home() {
     const navigateToHome = () => {
         navigate('/');
     };
+    const { t, i18n } = useTranslation();
 
     return(
         <div>
@@ -40,13 +42,13 @@ function Home() {
                 <div id="main-content">
                     <div id="main-navigation">
                         <div className="navigation-button" onClick={navigateToQuickQuestion}>
-                            <h1>Quick question</h1>
+                            <h1>{t("home.quick.question")}</h1>
                         </div>
                         <div className="navigation-button" onClick={navigateToTests}>
-                            <h1>40 questions Test</h1>
+                            <h1>{t("home.40questions")}</h1>
                         </div>
                         <div className="navigation-button" onClick={navigateToFlashcards}>
-                            <h1>FlashCards</h1>
+                            <h1>{t("home.flashcards")}</h1>
                         </div>
                     </div>
                 </div>

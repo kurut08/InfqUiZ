@@ -2,6 +2,7 @@ import './Flashcards.css';
 import React, {useState} from "react";
 import logo from "../../logo.png";
 import {useLocation, useNavigate} from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Flashcards() {
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ function Flashcards() {
     const navigateToHome = () => {
         navigate('/');
     };
+    const { t, i18n } = useTranslation();
 
     return (
         <div id="flashcard-page">
@@ -26,10 +28,10 @@ function Flashcards() {
             <div id="flashcard-container" >
                 <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
                     <div className="front">
-                        <p>1 strona</p>
+                        <p>{t("flashcard.firstpage")}</p>
                     </div>
                     <div className="back">
-                        <p>2 strona</p>
+                        <p>{t("flashcard.secondpage")}</p>
                     </div>
                 </div>
             </div>
