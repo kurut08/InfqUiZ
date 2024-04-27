@@ -1,50 +1,44 @@
-import logo from './java-icon.svg';
+import React, { Component } from "react";
 import './App.css';
-import { useState, useEffect } from 'react';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-function App() {
-const defaultValue = [];
-const [question, setQuestion] = useState(defaultValue);
+import Home from "./components/home/Home";
+import Tests from "./components/tests/Tests";
+import Flashcards from "./components/flashcards/Flashcards";
+import QuickQuestion from "./components/quickQuestion/QuickQuestion";
+import Category from "./components/category/Category";
 
-const getQuestion = async () =>{
-  try
-  {
-    const response = await fetch('http://localhost:8080/main/random', {mode:'cors'}).then((response) => response.json());
-    console.log({response});
-    setQuestion(response);
+class App extends Component {
+
+
+  render() {
+
+    return (
+        <div className="App">
+          <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/tests/category" element={<Category />} />
+                <Route path="/tests/category/java" element={<Tests />} />
+                <Route path="/tests/category/os" element={<Tests />} />
+                <Route path="/tests/category/db" element={<Tests />} />
+                <Route path="/tests/category/cg" element={<Tests />} />
+                <Route path="/flashcards/category" element={<Category />} />
+                <Route path="/flashcards/category/java" element={<Flashcards />} />
+                <Route path="/flashcards/category/os" element={<Flashcards />} />
+                <Route path="/flashcards/category/db" element={<Flashcards />} />
+                <Route path="/flashcards/category/cg" element={<Flashcards />} />
+                <Route path="/quickquestion" element={<QuickQuestion />} />
+
+
+
+            </Routes>
+          </BrowserRouter>
+
+        </div>
+    );
   }
-  catch(error)
-  {
-    console.log(error);
-  }
-};
-  useEffect(() => {
-    getQuestion();
-  }, []);
-const exampleQuestion = question;
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Here should be shown example random question</a>
-          <p>{exampleQuestion.question}</p>
-          <p>A.{exampleQuestion.answer_a}</p>
-          <p>B.{exampleQuestion.answer_b}</p>
-          <p>C.{exampleQuestion.answer_c}</p>
-          <p>D.{exampleQuestion.answer_correct}{exampleQuestion[0]}</p>
-        
-      </header>
-    </div>
-  );
 }
 
 export default App;

@@ -1,0 +1,45 @@
+#quick-question-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#header {
+    background-color: #f8f9fa;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.logo-container img {
+    max-width: 100px;
+    margin: 10%;
+}
+
+#quick-question-content {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+.footer {
+    background-color: #f8f9fa;
+    color: #ffffff;
+    text-align: end;
+    margin-top: auto;
+    min-width: 100%;
+    align-items: end;
+    justify-content: flex-start;
+    border-top: 2px solid #dee2e6;
+    bottom: 0;
+}
+
+#corpo {
+    margin-right: 1%;
+    color: black;
+}
