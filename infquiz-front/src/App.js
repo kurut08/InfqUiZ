@@ -25,10 +25,10 @@ class App extends Component {
                 <Route path="/tests/category/db" element={<Tests />} />
                 <Route path="/tests/category/cg" element={<Tests />} />
                 <Route path="/flashcards/category" element={<Category />} />
-                <Route path="/flashcards/category/java" element={<Flashcards />} />
-                <Route path="/flashcards/category/os" element={<Flashcards />} />
-                <Route path="/flashcards/category/db" element={<Flashcards />} />
-                <Route path="/flashcards/category/cg" element={<Flashcards />} />
+                <Route path="/flashcards/category/1" element={<Flashcards />} />
+                <Route path="/flashcards/category/2" element={<Flashcards />} />
+                <Route path="/flashcards/category/3" element={<Flashcards />} />
+                <Route path="/flashcards/category/4" element={<Flashcards />} />
                 <Route path="/quickquestion" element={<QuickQuestion />} />
 
 

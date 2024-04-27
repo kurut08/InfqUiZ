@@ -5,6 +5,7 @@ import com.app.InfqUiZ.Repository.CardsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 @Service
@@ -16,5 +17,10 @@ public class CardsService {
     public Cards getRandomCard(){
         long range = cardsRepository.count();
         return cardsRepository.findCardsById(random.nextInt(1,(int) range+1));
+    }
+    public Cards getRandomCard(int id){
+        ArrayList<Cards> cardsList = cardsRepository.findCardsByCategory(id);
+        long range = cardsList.size();
+        return cardsList.get(random.nextInt(0,(int) range));
     }
 }

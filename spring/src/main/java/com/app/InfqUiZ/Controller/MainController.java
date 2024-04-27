@@ -34,4 +34,9 @@ public class MainController {
     public ResponseEntity<Cards> getRandomCard(){
         return new ResponseEntity<>(cardsService.getRandomCard(), HttpStatus.OK);
     }
+    @GetMapping("/flashcards/category/{id}")
+    @ResponseBody
+    public ResponseEntity<Cards> getRandomCard(@PathVariable int id){
+        return new ResponseEntity<>(cardsService.getRandomCard(id), HttpStatus.OK);
+    }
 }

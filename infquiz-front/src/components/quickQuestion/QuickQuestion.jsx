@@ -2,6 +2,7 @@ import './QuickQuestion.css';
 import React, { useState } from "react";
 import logo from '../../logo.png';
 import {useNavigate} from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function QuickQuestion() {
     const defaultVaule = [];
@@ -10,7 +11,8 @@ function QuickQuestion() {
     const navigate = useNavigate();
     const [random, setRandomQuestion] = useState(defaultVaule); 
     const [selectedAnswer, setSelectedAnswer] = useState('');
-    const [shuffledArray, setShuffledArray] = useState([]);
+    const { t, i18n } = useTranslation();
+
     const navigateToHome = () => {
         navigate('/');
     };
@@ -25,7 +27,7 @@ function QuickQuestion() {
     const getQuestion = async () =>{
         try
         {
-            const response = await fetch('http://localhost:8080/main/question/random', {mode:'cors'}).then((response) => response.json());
+            const response = await fetch('http://localhost:8080/main/question/random/', {mode:'cors'}).then((response) => response.json());
             console.log({ response });
             setQuestion(response);
             setCorrectAnswer(response.answer_correct);
@@ -73,16 +75,16 @@ function QuickQuestion() {
                             {question.question}
                         </div>
                         <div id="ans_a" className='answer' onClick={() => setSelectedAnswer(random[0])}>
-                            <p>A. {random[0]}</p>
+                            <p>A. {t(random[0])}</p>
                         </div>
                         <div id="ans_b" className='answer' onClick={() => setSelectedAnswer(random[1])}>
-                            <p>B. {random[1]}</p>
+                            <p>B. {t(random[1])}</p>
                         </div>
                         <div id="ans_c" className='answer' onClick={() => setSelectedAnswer(random[2])}>
-                            <p>C. {random[2]}</p>
+                            <p>C. {t(random[2])}</p>
                         </div>
                         <div id="ans_d" className='answer' onClick={() => setSelectedAnswer(random[3])}>
-                            <p>D. {random[3]}</p>
+                            <p>D. {t(random[3])}</p>
                         </div>
                         <button type="button" className='btn-check-answer' onClick={checkAnswer}>
                             Sprawdź odpowiedź

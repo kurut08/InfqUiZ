@@ -10,30 +10,30 @@ function Category() {
     const location = useLocation();
     const { type } = location.state || {};
     const navigateToJava = () => {
-        navigate('/'+type+'/category/java', {
+        navigate('/'+type+'/category/1', {
             state: {
-                category: 'java'
+                category: '1'
             }
         });
     };
     const navigateToDatabases = () => {
-        navigate('/'+type+'/category/db', {
+        navigate('/'+type+'/category/2', {
             state: {
-                category: 'db'
+                category: '2'
             }
         });
     };
     const navigateToComputerGraphics = () => {
-        navigate('/'+type+'/category/cg', {
+        navigate('/'+type+'/category/3', {
             state: {
-                category: 'cg'
+                category: '3'
             }
         });
     };
     const navigateToOperativeSystem = () => {
-        navigate('/'+type+'/category/os', {
+        navigate('/'+type+'/category/4', {
             state: {
-                category: 'os'
+                category: '4'
             }
         });
     };

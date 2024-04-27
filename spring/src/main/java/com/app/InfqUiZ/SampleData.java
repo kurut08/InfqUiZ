@@ -15,7 +15,9 @@ public class SampleData {
         questionsRepository.save(question2);
         questionsRepository.save(question3);
         Cards card1 = new Cards("Jakie są rodzaje typów w javie?", "Pierwotne (logiczne, całkowitoliczbowe, zmiennopozycyjne), Referencyjne (klas, interfejsów, tablic)", 1);
+        Cards card2 = new Cards("Jakie są typy w javie?", "Pierwotne i Referencyjne", 1);
         cardsRepository.save(card1);
+        cardsRepository.save(card2);
         System.out.println("ALL QUESTIONS\n"+ questionsRepository.findAll()+"\n############################");
         System.out.println("QUESTION OF ID 2:\n"+questionsRepository.findQuestionsById(2)+"\n############################");
         System.out.println("ALL CARDS:\n"+cardsRepository.findAll()+"\n############################");

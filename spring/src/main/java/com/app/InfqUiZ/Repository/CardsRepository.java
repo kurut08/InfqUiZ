@@ -5,7 +5,10 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public interface CardsRepository extends JpaRepository<Cards, Integer> {
     Cards findCardsById(Integer id);
+    ArrayList<Cards> findCardsByCategory(int category);
 }

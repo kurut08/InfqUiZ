@@ -1,23 +1,44 @@
 import './Flashcards.css';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import logo from "../../logo.png";
-import {useLocation, useNavigate} from "react-router-dom";
+import {Route, useParams, useRoutes, useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Flashcards() {
     const navigate = useNavigate();
     const [isFlipped, setIsFlipped] = useState(false);
     const location = useLocation();
+    const [card, setCard] = useState([]);
     const { category } = location.state || {};
     const flipCard = () => {
         console.log('Card flipped');
         setIsFlipped(!isFlipped);
+        if(isFlipped)
+        {
+            getFlashCard();
+        }
     };
     const navigateToHome = () => {
         navigate('/');
     };
+    useEffect(()=>{
+        getFlashCard();
+        }, [])
     const { t, i18n } = useTranslation();
+    const getFlashCard = async () =>{
+        try
+        {
+            const response = await fetch('http://localhost:8080/main'+location.pathname, {mode:'cors'}).then((response) => response.json());
+            console.log({ response });
+            setCard(response);
+            console.log({card});
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
 
+    };
     return (
         <div id="flashcard-page">
             <div id="header">
@@ -28,10 +49,10 @@ function Flashcards() {
             <div id="flashcard-container" >
                 <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
                     <div className="front">
-                        <p>{t("flashcard.firstpage")}</p>
+                        <p>{t(card.question)}</p>
                     </div>
                     <div className="back">
-                        <p>{t("flashcard.secondpage")}</p>
+                        <p>{t(card.answer)}</p>
                     </div>
                 </div>
             </div>
