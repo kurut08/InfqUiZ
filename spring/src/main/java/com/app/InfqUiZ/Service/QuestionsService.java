@@ -1,5 +1,6 @@
 package com.app.InfqUiZ.Service;
 
+import com.app.InfqUiZ.Models.Cards;
 import com.app.InfqUiZ.Models.Questions;
 import com.app.InfqUiZ.Repository.QuestionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,13 @@ public class QuestionsService {
         return questionsRepository.findAll();
     }
 
-    public List<Questions> getRandomTest() {
+    public List<Questions> getRandomTest(int id) {
+        ArrayList<Questions> questionsList = questionsRepository.findQuestionsByCategory(id);
         List<Questions> list = new ArrayList<>();
-        for (int i = 0; i < 40; i++) {
-           list.add(getRandomQuestion());
+
+        //need to change the limit value of i to f.e. 20
+        for (int i = 0; i < 3; i++) {
+           list.add(questionsList.get(random.nextInt(questionsList.size())));
         }
         return list;
     }

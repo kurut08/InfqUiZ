@@ -25,9 +25,10 @@ public class MainController {
         return new ResponseEntity<>(questionsService.getRandomQuestion(), HttpStatus.OK);
     }
 
-    @GetMapping("/question/test")
-    public ResponseEntity <List<Questions>> getRandomTest(){
-        return new ResponseEntity<>(questionsService.getRandomTest(), HttpStatus.OK);
+    @GetMapping("/tests/category/{id}")
+    @ResponseBody
+    public ResponseEntity <List<Questions>> getRandomTest(@PathVariable int id){
+        return new ResponseEntity<>(questionsService.getRandomTest(id), HttpStatus.OK);
     }
 
     @GetMapping("/card/random")
