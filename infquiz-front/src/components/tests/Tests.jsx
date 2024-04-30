@@ -10,57 +10,57 @@ function Tests() {
     const location = useLocation();
     const { category } = location.state || {};
     let [test, setTest] = useState([]);
-    let random = [];
+    let random = [[],[]];
     let correctAnswer = [];
     let [selectedAnswer, setSelectedAnswer] = useState('');
+    let list;
     const navigateToHome = () => {
         navigate('/');
     };
     useEffect(()=>{
         getTest();
-
         }, [])
     const { t, i18n } = useTranslation();
     const shufle = (array) => {
-        for (var i = 0; i < array.length; i++) {
-            for(var z = array[i].length - 1; z > 0; z--)
-            {
-                var j = Math.floor(Math.random() * (z + 1));
-                var temp = array[i][z];
-                array[i][z] = array[i][j];
-                array[i][j] = temp;
+        for (let z = 0; z < array.length; z++) {
+            for (let i = array[0].length -1; i>=0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let temp = array[z][i];
+		        let tempj = array[z][j]; 
+                array[z][i] = tempj;
+                array[z][j] = temp;
+                console.log(array[z][j]);
             }
+
         }
     };
     let getTest = async () =>{
         try
         {
-            const response = await fetch('http://localhost:8080/main'+location.pathname, {mode:'cors'}).then((response) => response.json());
+            let response = await fetch('http://localhost:8080/main'+location.pathname, {mode:'cors'}).then((response) => response.json());
             setTest(response);
             console.log({test});
-            console.log({test});
-            correctAnswer.length = 0;
-            for(var i = 0; i < test.length; i++){
-                correctAnswer.push(test[i].answer_correct);
-                random.push(test[i].answer_a);
-                random.push(test[i].answer_b);
-                random.push(test[i].answer_c);
-                random.push(test[i].answer_correct);
-
-            }
-            shufle(random);
-            console.log({random});
-            console.log({response});
-            console.log({correctAnswer});
-
         }
         catch(err)
         {
             console.log(err);
         }
-
     };
-    
+    let getSmth = () => {
+        correctAnswer.length = 0;
+        random = [[],[]];
+        for(var i = 0; i < 2; i++){
+            correctAnswer.push(test[i].answer_correct);
+            random[i].push(test[i].answer_a);
+            random[i].push(test[i].answer_b);
+            random[i].push(test[i].answer_c);
+            random[i].push(test[i].answer_correct);
+        }
+        shufle(random);
+        console.log({random});
+        console.log({correctAnswer});
+        
+    }
     return(
         <div>
             <div id="test-page">
@@ -69,17 +69,12 @@ function Tests() {
                         <img
                             src={logo}
                             alt="App Logo" className="app-logo"/>
+                            
                     </div>
                 </div>
                 <div id="quick-question-content">
-                {random.map((items, index) => {
-                    return (
-                        <ol>
-                            <li>{items.question}</li>
-
-                         </ol>
-                        );
-                    })}
+                    <button onClick={getSmth}>Clickme</button>
+                    <TestList array={random}/>
                 </div>
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>
