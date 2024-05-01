@@ -4,6 +4,7 @@ import logo from '../../logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import TestList from './TestList';
+import { render } from '@testing-library/react';
 
 function Tests() {
     const navigate = useNavigate();
@@ -12,8 +13,7 @@ function Tests() {
     let [test, setTest] = useState([]);
     let random = [[],[]];
     let correctAnswer = [];
-    let [selectedAnswer, setSelectedAnswer] = useState('');
-    let list;
+    let questionsToTest = [];
     const navigateToHome = () => {
         navigate('/');
     };
@@ -49,7 +49,8 @@ function Tests() {
     let getSmth = () => {
         correctAnswer.length = 0;
         random = [[],[]];
-        for(var i = 0; i < 2; i++){
+        questionsToTest.length = 0;
+        for(var i = 0; i < test.length - 1; i++){
             correctAnswer.push(test[i].answer_correct);
             random[i].push(test[i].answer_a);
             random[i].push(test[i].answer_b);
@@ -57,10 +58,18 @@ function Tests() {
             random[i].push(test[i].answer_correct);
         }
         shufle(random);
+        for(var i = 0; i<test.length - 1; i++){
+            random[i].push(test[i].question);
+        }
         console.log({random});
         console.log({correctAnswer});
-        
+        render(<TestList array={random}/>);
     }
+    let checkTest = () => {
+        //need to think about it
+        //probably do checking in testlist.jsx
+    }
+
     return(
         <div>
             <div id="test-page">
@@ -73,15 +82,18 @@ function Tests() {
                     </div>
                 </div>
                 <div id="quick-question-content">
-                    <button onClick={getSmth}>Clickme</button>
-                    <TestList array={random}/>
+                    <button onClick={getSmth}>Start Test!</button>
+                    
+                    <button onClick={checkTest}>Chek Results</button>
                 </div>
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>
                 </div>
             </div>
+        
         </div>
     );
+
 }
 
 export default Tests;
