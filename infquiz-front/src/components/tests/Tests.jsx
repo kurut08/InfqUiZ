@@ -60,16 +60,12 @@ function Tests() {
         shufle(random);
         for(var i = 0; i<test.length - 1; i++){
             random[i].push(test[i].question);
+            random[i].push(test[i].answer_correct);
         }
         console.log({random});
         console.log({correctAnswer});
         render(<TestList array={random}/>);
     }
-    let checkTest = () => {
-        //need to think about it
-        //probably do checking in testlist.jsx
-    }
-
     return(
         <div>
             <div id="test-page">
@@ -83,8 +79,6 @@ function Tests() {
                 </div>
                 <div id="quick-question-content">
                     <button onClick={getSmth}>Start Test!</button>
-                    
-                    <button onClick={checkTest}>Chek Results</button>
                 </div>
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>
