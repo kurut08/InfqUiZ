@@ -10,7 +10,7 @@ function QuickQuestion() {
     const [correctAnswer, setCorrectAnswer] = useState('');
     const navigate = useNavigate();
     const [random, setRandomQuestion] = useState(defaultVaule); 
-    const [selectedAnswer, setSelectedAnswer] = useState('');
+    let selectedAnswer = "";
     const { t, i18n } = useTranslation();
 
     const navigateToHome = () => {
@@ -27,7 +27,7 @@ function QuickQuestion() {
     const getQuestion = async () =>{
         try
         {
-            const response = await fetch('http://localhost:8080/main/question/random/', {mode:'cors'}).then((response) => response.json());
+            const response = await fetch('http://localhost:8080/main/question/random', {mode:'cors'}).then((response) => response.json());
             console.log({ response });
             setQuestion(response);
             setCorrectAnswer(response.answer_correct);
@@ -40,6 +40,10 @@ function QuickQuestion() {
             console.log({random});
             shuffle(random);
             setRandomQuestion(random);
+            document.getElementById("ans_a").setAttribute('style', 'color: black');
+            document.getElementById("ans_b").setAttribute('style', 'color: black');
+            document.getElementById("ans_c").setAttribute('style', 'color: black');
+            document.getElementById("ans_d").setAttribute('style', 'color: black');
         }
         catch(err)
         {
@@ -47,11 +51,27 @@ function QuickQuestion() {
         }
 
     };
-    const checkAnswer = () => {
-        if (selectedAnswer === correctAnswer) {
-          alert('Poprawna odpowiedź!');
-        } else {
-          alert('Niepoprawna odpowiedź. Spróbuj ponownie.');
+    const checkAnswer = (x, corr) => {
+        document.getElementById("ans_a").setAttribute('style', 'color: red');
+        document.getElementById("ans_b").setAttribute('style', 'color: red');
+        document.getElementById("ans_c").setAttribute('style', 'color: red');
+        document.getElementById("ans_d").setAttribute('style', 'color: red');
+        if(x === correctAnswer){
+            document.getElementById(corr).setAttribute('style', 'color: green');
+        }
+        else{
+            if(random[0] === correctAnswer){
+                document.getElementById("ans_a").setAttribute('style', 'color: green');
+            }
+            if(random[1] === correctAnswer){
+                document.getElementById("ans_b").setAttribute('style', 'color: green');
+            }
+            if(random[2] === correctAnswer){
+                document.getElementById("ans_c").setAttribute('style', 'color: green');
+            }
+            if(random[3] === correctAnswer){
+                document.getElementById("ans_d").setAttribute('style', 'color: green');
+            }
         }
     };
 
@@ -74,24 +94,20 @@ function QuickQuestion() {
                         <div id="question" className='question'>
                             {question.question}
                         </div>
-                        <div id="ans_a" className='answer' onClick={() => setSelectedAnswer(random[0])}>
-                            <p>A. {t(random[0])}</p>
+                        <div id="ans_a" className='answer' onClick={() => checkAnswer(random[0], "ans_a")}>
+                            <p>A.{t(random[0])}</p>
                         </div>
-                        <div id="ans_b" className='answer' onClick={() => setSelectedAnswer(random[1])}>
-                            <p>B. {t(random[1])}</p>
+                        <div id="ans_b" className='answer' onClick={() => checkAnswer(random[1], "ans_b")}>
+                            <p>B.{t(random[1])}</p>
                         </div>
-                        <div id="ans_c" className='answer' onClick={() => setSelectedAnswer(random[2])}>
-                            <p>C. {t(random[2])}</p>
+                        <div id="ans_c" className='answer' onClick={() => checkAnswer(random[2], "ans_c")}>
+                            <p>C.{t(random[2])}</p>
                         </div>
-                        <div id="ans_d" className='answer' onClick={() => setSelectedAnswer(random[3])}>
-                            <p>D. {t(random[3])}</p>
+                        <div id="ans_d" className='answer' onClick={() => checkAnswer(random[3], "ans_d")}>
+                            <p>D.{t(random[3])}</p>
                         </div>
-                        <button type="button" className='btn-check-answer' onClick={checkAnswer}>
-                            Sprawdź odpowiedź
-                        </button>
                     </> 
                 )}
-                    
                 </div>
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>

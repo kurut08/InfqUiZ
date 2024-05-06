@@ -1,6 +1,7 @@
 import './Tests.css';
 import React, { useState, useEffect } from "react";
 import logo from '../../logo.png';
+import ReactDOM from "react-dom";
 import {useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import TestList from './TestList';
@@ -64,7 +65,10 @@ function Tests() {
         }
         console.log({random});
         console.log({correctAnswer});
-        render(<TestList array={random}/>);
+        const root = ReactDOM.createRoot(
+            document.getElementById('test-questions')
+          );
+        root.render(<TestList array={random}/>);
     }
     return(
         <div>
@@ -79,7 +83,10 @@ function Tests() {
                 </div>
                 <div id="quick-question-content">
                     <button onClick={getSmth}>Start Test!</button>
+                    <div id="test-questions"></div>
+                    <div id="quick-question-result"></div>
                 </div>
+                
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>
                 </div>
