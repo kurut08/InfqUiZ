@@ -38,7 +38,7 @@ function Tests() {
     let getTest = async () =>{
         try
         {
-            let response = await fetch('http://localhost:8080/main'+location.pathname, {mode:'cors'}).then((response) => response.json());
+            let response = await fetch('http://localhost:8080/main'+location.pathname+'/'+t('lang'), {mode:'cors'}).then((response) => response.json());
             setTest(response);
             console.log({test});
         }

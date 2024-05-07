@@ -11,4 +11,6 @@ import java.util.ArrayList;
 public interface CardsRepository extends JpaRepository<Cards, Integer> {
     Cards findCardsById(Integer id);
     ArrayList<Cards> findCardsByCategory(int category);
+    ArrayList<Cards> findCardsByCategoryAndLang(int category, String lang);
+
 }

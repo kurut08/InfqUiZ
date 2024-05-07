@@ -13,11 +13,14 @@ public class Cards {
     private String answer;
     @Column(nullable = false)
     private int category;
-    public Cards(String question, String answer, int category){
+    @Column(nullable = false)
+    private String lang;
+    public Cards(String question, String answer, int category, String lang){
         super();
         this.question = question;
         this.answer = answer;
         this.category = category;
+        this.lang = lang;
     }
     public Cards(){
         super();
@@ -53,5 +56,13 @@ public class Cards {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
     }
 }

@@ -9,5 +9,7 @@ import java.util.ArrayList;
 @Repository
 public interface QuestionsRepository extends JpaRepository<Questions, Integer> {
     Questions findQuestionsById(Integer id);
+    Questions findQuestionsByIdAndLang(Integer id, String lang);
     ArrayList<Questions> findQuestionsByCategory(int i);
+    ArrayList<Questions> findQuestionsByCategoryAndLang(int i, String lang);
 }

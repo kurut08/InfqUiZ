@@ -28,7 +28,7 @@ function Flashcards() {
     const getFlashCard = async () =>{
         try
         {
-            const response = await fetch('http://localhost:8080/main'+location.pathname, {mode:'cors'}).then((response) => response.json());
+            const response = await fetch('http://localhost:8080/main'+location.pathname+'/'+t('lang'), {mode:'cors'}).then((response) => response.json());
             console.log({ response });
             setCard(response);
             console.log({card});

@@ -16,9 +16,11 @@ public class Questions {
     private String answer_correct;
     @Column(nullable = false)
     private int category;
+    @Column(nullable = false)
+    private String lang;
 
     //Question with 4 answers, 1-4 good
-    public Questions(String question, String answer_a, String answer_b, String answer_c, String answer_correct, int category){
+    public Questions(String question, String answer_a, String answer_b, String answer_c, String answer_correct, int category, String lang){
         super();
         this.question = question;
         this.answer_a = answer_a;
@@ -26,6 +28,7 @@ public class Questions {
         this.answer_c = answer_c;
         this.answer_correct = answer_correct;
         this.category = category;
+        this.lang = lang;
     }
 
     //Questions with answer "True or False"
@@ -93,5 +96,13 @@ public class Questions {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public String getLang() {
+        return lang;
     }
 }

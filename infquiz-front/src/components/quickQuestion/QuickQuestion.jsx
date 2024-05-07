@@ -27,7 +27,7 @@ function QuickQuestion() {
     const getQuestion = async () =>{
         try
         {
-            const response = await fetch('http://localhost:8080/main/question/random', {mode:'cors'}).then((response) => response.json());
+            const response = await fetch('http://localhost:8080/main/question/random/'+t('lang'), {mode:'cors'}).then((response) => response.json());
             console.log({ response });
             setQuestion(response);
             setCorrectAnswer(response.answer_correct);

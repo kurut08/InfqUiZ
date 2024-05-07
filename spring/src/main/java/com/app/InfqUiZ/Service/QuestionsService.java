@@ -1,15 +1,11 @@
 package com.app.InfqUiZ.Service;
 
-import com.app.InfqUiZ.Models.Cards;
 import com.app.InfqUiZ.Models.Questions;
 import com.app.InfqUiZ.Repository.QuestionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class QuestionsService {
@@ -21,17 +17,18 @@ public class QuestionsService {
         questionsRepository.save(question);
     }
 
-    public Questions getRandomQuestion(){
+    public Questions getRandomQuestion(String lang){
         long range = questionsRepository.count();
-        return questionsRepository.findQuestionsById(random.nextInt(1, (int) range+1));
+        return questionsRepository.findQuestionsByIdAndLang(random.nextInt(1, (int) range+1),lang);
     }
 
     public List<Questions> getAllQuestions(){
         return questionsRepository.findAll();
     }
 
-    public List<Questions> getRandomTest(int id) {
-        ArrayList<Questions> questionsList = questionsRepository.findQuestionsByCategory(id);
+
+    public List<Questions> getRandomTest(int id, String lang) {
+        ArrayList<Questions> questionsList = questionsRepository.findQuestionsByCategoryAndLang(id, lang);
         List<Questions> list = new ArrayList<>();
 
         //need to change the limit value of i to f.e. 20

@@ -20,24 +20,20 @@ public class MainController {
     @Autowired
     private CardsService cardsService;
 
-    @GetMapping("/question/random")
-    public ResponseEntity<Questions> getRandomQuestion(){
-        return new ResponseEntity<>(questionsService.getRandomQuestion(), HttpStatus.OK);
+    @GetMapping("/question/random/{lang}")
+    public ResponseEntity<Questions> getRandomQuestion(@PathVariable String lang){
+        return new ResponseEntity<>(questionsService.getRandomQuestion(lang), HttpStatus.OK);
     }
 
-    @GetMapping("/tests/category/{id}")
+    @GetMapping("/tests/category/{id}/{lang}")
     @ResponseBody
-    public ResponseEntity <List<Questions>> getRandomTest(@PathVariable int id){
-        return new ResponseEntity<>(questionsService.getRandomTest(id), HttpStatus.OK);
+    public ResponseEntity <List<Questions>> getRandomTest(@PathVariable int id, @PathVariable String lang){
+        return new ResponseEntity<>(questionsService.getRandomTest(id, lang), HttpStatus.OK);
     }
 
-    @GetMapping("/card/random")
-    public ResponseEntity<Cards> getRandomCard(){
-        return new ResponseEntity<>(cardsService.getRandomCard(), HttpStatus.OK);
-    }
-    @GetMapping("/flashcards/category/{id}")
+    @GetMapping("/flashcards/category/{id}/{lang}")
     @ResponseBody
-    public ResponseEntity<Cards> getRandomCard(@PathVariable int id){
-        return new ResponseEntity<>(cardsService.getRandomCard(id), HttpStatus.OK);
+    public ResponseEntity<Cards> getRandomCard(@PathVariable int id, @PathVariable String lang){
+        return new ResponseEntity<>(cardsService.getRandomCard(id, lang), HttpStatus.OK);
     }
 }

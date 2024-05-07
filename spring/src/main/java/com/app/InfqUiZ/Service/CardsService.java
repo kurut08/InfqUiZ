@@ -14,12 +14,12 @@ public class CardsService {
     @Autowired
     private CardsRepository cardsRepository;
 
-    public Cards getRandomCard(){
+    public Cards getRandomCard(String lang){
         long range = cardsRepository.count();
         return cardsRepository.findCardsById(random.nextInt(1,(int) range+1));
     }
-    public Cards getRandomCard(int id){
-        ArrayList<Cards> cardsList = cardsRepository.findCardsByCategory(id);
+    public Cards getRandomCard(int id, String lang){
+        ArrayList<Cards> cardsList = cardsRepository.findCardsByCategoryAndLang(id, lang);
         long range = cardsList.size();
         return cardsList.get(random.nextInt(0,(int) range));
     }
