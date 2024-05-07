@@ -9,6 +9,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: admin
+    volumes:
+      - ./backend/test.sql:/docker-entrypoint-initdb.d/db.sql
   
   pgadmin:
     container_name: pgAdmin
@@ -22,4 +24,4 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     restart: always
     volumes:
-     - ./backend/servers.json:/pgadmin4/servers.json
+      - ./backend/servers.json:/pgadmin4/servers.json

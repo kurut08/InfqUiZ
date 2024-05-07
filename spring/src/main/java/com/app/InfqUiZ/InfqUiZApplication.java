@@ -16,8 +16,6 @@ public class InfqUiZApplication {
 	@Bean
 	CommandLineRunner run(QuestionsRepository questionsRepository, CardsRepository cardsRepository){
 		return args ->{
-			SampleData sampleData = new SampleData();
-			sampleData.FillDB(questionsRepository, cardsRepository);
 		};
 	}
 }
