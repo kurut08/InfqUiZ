@@ -28,13 +28,12 @@ public class QuestionsService {
 
 
     public List<Questions> getRandomTest(int id, String lang) {
-        ArrayList<Questions> questionsList = questionsRepository.findQuestionsByCategoryAndLang(id, lang);
-        List<Questions> list = new ArrayList<>();
-
-        //21 questions -> 20 displayed
+        List<Questions> questionsList = questionsRepository.findQuestionsByCategoryAndLang(id, lang);
+        List<Questions> finalTest = new ArrayList<>();
+        Collections.shuffle(questionsList, new Random());
         for (int i = 0; i < 21; i++) {
-           list.add(questionsList.get(random.nextInt(questionsList.size())));
+            finalTest.add(questionsList.get(i));
         }
-        return list;
+        return finalTest;
     }
 }

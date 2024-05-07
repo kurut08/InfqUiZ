@@ -38,7 +38,7 @@ const TestList = ({ array }) => {
         <div id="testList">
             {array.map((innerArray, index) => (
                 <div key={index} style={{textAlign: 'center'}}>
-                    <div>{innerArray[4]}</div>
+                    <div>{index+1}. {innerArray[4]}</div>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
