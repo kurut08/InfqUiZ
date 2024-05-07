@@ -1,4 +1,6 @@
 {
+  "lang": "eng",
+
   "home.quick.question": "Quick question",
   "home.40questions": "40 questions test",
   "home.flashcards": "Flashcards",
@@ -10,5 +12,10 @@
   "category.databases": "Databases",
   "category.computergraphics": "Computer Graphics",
   "category.operativesystems": "Operative Systems",
-  "lang": "en"
+
+  "quickQuestion.getRandomQuesiton": "Get random question",
+
+  "test.score": "Your score",
+  "test.checkResults": "Check results",
+  "test.start": "Start Test!"
 }

@@ -1,4 +1,6 @@
 {
+  "lang": "pl",
+
   "home.quick.question": "Pojedyncze pytanie",
   "home.40questions": "Quiz 40 pytań",
   "home.flashcards": "Fiszki",
@@ -10,5 +12,10 @@
   "category.databases": "Bazy Danych",
   "category.computergraphics": "Grafika Komputerowa",
   "category.operativesystems": "Systemy Operacyjne",
-  "lang": "pl"
+
+  "quickQuestion.getRandomQuesiton": "Wylosuj pytanie",
+
+  "test.score": "Twój wynik",
+  "test.checkResults": "Sprawdź wynik",
+  "test.start": "Zacznij Test!"
 }

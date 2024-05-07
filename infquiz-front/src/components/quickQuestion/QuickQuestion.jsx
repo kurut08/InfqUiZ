@@ -61,7 +61,7 @@ function QuickQuestion() {
             </div>
             <div id="quick-question-content">
                 <button id="getRandomQuestion" type="button" onClick={getQuestion}>
-                    Get Random Question
+                    {t("quickQuestion.getRandomQuesiton")}
                 </button>
                 {question && (
                     <>

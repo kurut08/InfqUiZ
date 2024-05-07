@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './TestList.css';
+import {useTranslation} from "react-i18next";
 
 const TestList = ({ array }) => {
     const [selectedAnswers, setSelectedAnswers] = useState(new Array(array.length).fill(null));
@@ -14,6 +15,7 @@ const TestList = ({ array }) => {
         newAnswers[questionIndex] = answer;
         setSelectedAnswers(newAnswers);
     };
+    const { t, i18n } = useTranslation();
 
     const checkTest = () => {
         let count = 0;
@@ -65,12 +67,12 @@ const TestList = ({ array }) => {
 
             {score !== null && (
                 <div id="quick-question-result">
-                    YOUR SCORE: {score}/20
+                    {t("test.score")}: {score}/20
                 </div>
             )}
 
             {!resultsChecked && (
-                <button id="checkResults" onClick={checkTest}>Check Results</button>
+                <button id="checkResults" onClick={checkTest}>{t("test.checkResults")}</button>
             )}
         </div>
     );

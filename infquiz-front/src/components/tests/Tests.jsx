@@ -89,7 +89,7 @@ function Tests() {
                 <div id="test-content">
                     {showButton && (
                         <button id="testButton" onClick={handleClick}>
-                            Start Test!
+                            {t("test.start")}
                         </button>
                     )}
                     <div id="test-questions"></div>

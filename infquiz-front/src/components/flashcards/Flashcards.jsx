@@ -50,10 +50,10 @@ function Flashcards() {
             <div id="flashcard-container" >
                 <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
                     <div className="front">
-                        <p>{t(card.question)}</p>
+                        <p>{card.question}</p>
                     </div>
                     <div className="back">
-                        <p>{t(card.answer)}</p>
+                        <p>{card.answer}</p>
                     </div>
                 </div>
             </div>
