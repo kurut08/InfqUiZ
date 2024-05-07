@@ -18,13 +18,28 @@
     margin: 10%;
 }
 
-#quick-question-content {
+#test-content {
     display: flex;
     justify-content: center;
     background-color: #ffffff;
     width: 100%;
-    flex-grow: 1;
+    flex-grow: 0;
 }
+
+#testButton {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: 1px solid #a1a5a9;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
 
 
 .footer {
