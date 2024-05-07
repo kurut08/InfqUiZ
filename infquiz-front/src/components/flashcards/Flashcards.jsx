@@ -1,7 +1,7 @@
 import './Flashcards.css';
 import React, {useState, useEffect} from "react";
 import logo from "../../logo.png";
-import {Route, useParams, useRoutes, useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Flashcards() {
@@ -9,7 +9,6 @@ function Flashcards() {
     const [isFlipped, setIsFlipped] = useState(false);
     const location = useLocation();
     const [card, setCard] = useState([]);
-    const { category } = location.state || {};
     const flipCard = () => {
         console.log('Card flipped');
         setIsFlipped(!isFlipped);
@@ -21,9 +20,11 @@ function Flashcards() {
     const navigateToHome = () => {
         navigate('/');
     };
+
     useEffect(()=>{
         getFlashCard();
         }, [])
+
     const { t, i18n } = useTranslation();
     const getFlashCard = async () =>{
         try

@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import {useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import TestList from './TestList';
-import { render } from '@testing-library/react';
 
 function Tests() {
     const navigate = useNavigate();
@@ -15,6 +14,7 @@ function Tests() {
     let random = [[],[]];
     let correctAnswer = [];
     let questionsToTest = [];
+    const [showButton, setShowButton] = useState(true);
     const navigateToHome = () => {
         navigate('/');
     };
@@ -70,6 +70,11 @@ function Tests() {
           );
         root.render(<TestList array={random}/>);
     }
+
+    const handleClick = () =>{
+        getSmth();
+        setShowButton(false);
+    }
     return(
         <div>
             <div id="test-page">
@@ -81,8 +86,12 @@ function Tests() {
                             
                     </div>
                 </div>
-                <div id="quick-question-content">
-                    <button onClick={getSmth}>Start Test!</button>
+                <div id="test-content">
+                    {showButton && (
+                        <button id="testButton" onClick={handleClick}>
+                            Start Test!
+                        </button>
+                    )}
                     <div id="test-questions"></div>
                     <div id="quick-question-result"></div>
                 </div>

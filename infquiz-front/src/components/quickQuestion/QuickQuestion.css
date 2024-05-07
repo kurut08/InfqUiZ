@@ -20,12 +20,44 @@
 
 #quick-question-content {
     display: flex;
-    justify-content: center;
-    background-color: #ffffff;
-    width: 100%;
-    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
+#getRandomQuestion {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: 1px solid #a1a5a9;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+
+}
+
+.btn-question {
+    margin-bottom: 20px;
+}
+
+/* Styl dla pytania */
+.question {
+    margin-bottom: 10px;
+}
+
+/* Styl dla odpowiedzi */
+.answer {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .footer {
     background-color: #f8f9fa;
@@ -42,4 +74,14 @@
 #corpo {
     margin-right: 1%;
     color: black;
+}
+
+.answer.correct {
+    background-color: #32CD32;
+    color: white;
+}
+
+.answer.incorrect {
+    background-color: #FF6347;
+    color: white;
 }
