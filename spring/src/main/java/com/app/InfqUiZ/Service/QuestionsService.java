@@ -31,8 +31,8 @@ public class QuestionsService {
         ArrayList<Questions> questionsList = questionsRepository.findQuestionsByCategoryAndLang(id, lang);
         List<Questions> list = new ArrayList<>();
 
-        //need to change the limit value of i to f.e. 20
-        for (int i = 0; i < 3; i++) {
+        //21 questions -> 20 displayed
+        for (int i = 0; i < 21; i++) {
            list.add(questionsList.get(random.nextInt(questionsList.size())));
         }
         return list;
