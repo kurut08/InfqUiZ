@@ -16,21 +16,21 @@ function Category() {
             }
         });
     };
-    const navigateToDatabases = () => {
+    const navigateToComputerGraphics = () => {
         navigate('/'+type+'/category/2', {
             state: {
                 category: '2'
             }
         });
     };
-    const navigateToComputerGraphics = () => {
+    const navigateToOperativeSystem = () => {
         navigate('/'+type+'/category/3', {
             state: {
                 category: '3'
             }
         });
     };
-    const navigateToOperativeSystem = () => {
+    const navigateToDatabases = () => {
         navigate('/'+type+'/category/4', {
             state: {
                 category: '4'
@@ -57,14 +57,14 @@ function Category() {
                         <div className="category" onClick={navigateToJava}>
                             <h1>{t("category.java")}</h1>
                         </div>
-                        <div className="category" onClick={navigateToDatabases}>
-                            <h1>{t("category.databases")}</h1>
-                        </div>
                         <div className="category" onClick={navigateToComputerGraphics}>
                             <h1>{t("category.computergraphics")}</h1>
                         </div>
                         <div className="category" onClick={navigateToOperativeSystem}>
                             <h1>{t("category.operativesystems")}</h1>
+                        </div>
+                        <div className="category" onClick={navigateToDatabases}>
+                            <h1>{t("category.databases")}</h1>
                         </div>
                     </div>
                 </div>

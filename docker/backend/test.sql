@@ -5,7 +5,7 @@
 -- Dumped from database version 16.0 (Debian 16.0-1.pgdg120+1)
 -- Dumped by pg_dump version 16.2
 
--- Started on 2024-05-07 18:19:47 UTC
+-- Started on 2024-05-09 14:39:32 UTC
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -23,7 +23,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 216 (class 1259 OID 16389)
+-- TOC entry 216 (class 1259 OID 16439)
 -- Name: cards; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -39,7 +39,7 @@ CREATE TABLE public.cards (
 ALTER TABLE public.cards OWNER TO postgres;
 
 --
--- TOC entry 215 (class 1259 OID 16388)
+-- TOC entry 215 (class 1259 OID 16438)
 -- Name: cards_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -55,7 +55,7 @@ CREATE SEQUENCE public.cards_id_seq
 ALTER SEQUENCE public.cards_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3366 (class 0 OID 0)
+-- TOC entry 3367 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: cards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -64,7 +64,7 @@ ALTER SEQUENCE public.cards_id_seq OWNED BY public.cards.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 16398)
+-- TOC entry 218 (class 1259 OID 16448)
 -- Name: questions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -83,7 +83,7 @@ CREATE TABLE public.questions (
 ALTER TABLE public.questions OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 16397)
+-- TOC entry 217 (class 1259 OID 16447)
 -- Name: questions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -99,7 +99,7 @@ CREATE SEQUENCE public.questions_id_seq
 ALTER SEQUENCE public.questions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3367 (class 0 OID 0)
+-- TOC entry 3368 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: questions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -108,7 +108,7 @@ ALTER SEQUENCE public.questions_id_seq OWNED BY public.questions.id;
 
 
 --
--- TOC entry 3208 (class 2604 OID 16392)
+-- TOC entry 3208 (class 2604 OID 16442)
 -- Name: cards id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -116,7 +116,7 @@ ALTER TABLE ONLY public.cards ALTER COLUMN id SET DEFAULT nextval('public.cards_
 
 
 --
--- TOC entry 3209 (class 2604 OID 16401)
+-- TOC entry 3209 (class 2604 OID 16451)
 -- Name: questions id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -124,7 +124,7 @@ ALTER TABLE ONLY public.questions ALTER COLUMN id SET DEFAULT nextval('public.qu
 
 
 --
--- TOC entry 3358 (class 0 OID 16389)
+-- TOC entry 3358 (class 0 OID 16439)
 -- Dependencies: 216
 -- Data for Name: cards; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -151,14 +151,14 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 1	19	Zdarzenia dzielą się na niskiego poziomu - związane z fizycznymi aspektami interfejsu, takimi jak kliknięcie myszy, albo wejście kursora na dany obszar, oraz semantyczne - sekwencje zdarzeń niskiego poziomu, np. wybranie konkretnej pozycji menu.	pl	Wybór pozycji z menu to zdarzenie typu
 1	20	Dziedziczenie służy do powiązania klas ze wspólnymi elementami, np. klasa Kwadrat, która dziedziczy po klasie Prostokąt, która dziedziczy po klasie Figura.	pl	W jakim celu wykorzystywane jest dziedziczenie?
 1	21	Pola i metody statyczne są metodami, które są tworzone na rzecz klasy, a nie obiektu. Innymi słowy, nie wymagają tworzenia instancji klasy.	pl	Co to są pola i metody statyczne? 
-1	22	WORA to akronim przewodni języka Java. Oznacza on write once run anywhere - napisz raz, uruchom gdziekolwiek.	pl	Co oznacza akronim WORA?
+1	22	WORA to akronim przewodni języka Java. Oznacza on 'write once run anywhere' - napisz raz, uruchom gdziekolwiek.	pl	Co oznacza akronim WORA?
 1	23	Słowo kluczowe this oznacza autoreferencję - wskazanie na obecny obiekt.	pl	Co oznacza słowo kluczowy this?
 1	24	Podanie błędnego adresu URL skutkuje wyrzuceniem wyjątku MalformedURLException.	pl	W przypadku błędnego adresu URL wyrzucony jest wyjątek:
 1	25	Poprawna definicja konstruktora kopiującego to A(A a) {}. Parametrem przekazywanym do konstruktora klasy A jest inny obiekt typu A.	pl	Jaka jest poprawna definicja konstruktora kopiującego klasy A?
 1	26	Domyślny menedżer rozkładu dla klasy JFrame to BorderLayout.	pl	Jaki jest domyślny menedżer rozkładu dla klasy JFrame?
 1	27	W metodzie niestatycznej można bezpośrednio odwoływać się do pól statycznych - nie można tego wykonać w drugą stronę.	pl	Czy w metodzie niestatycznej można bezpośrednio odwoływać się do pól statycznych klasy?
 1	28	Jedną z głównych zalet JavaFX względem Swing jest planowany rozwój - jest to produkt nowszy, wciąż wspierany i rozwijany.	pl	Zalety JavaFX w stosunku do Swing
-1	29	Funkcja suspend() przenosi wątek do stanu nie wykonywany.	pl	Kiedy wątek przechodzi do stanu nie wykonywany?
+1	29	Funkcja suspend() przenosi wątek do stanu 'nie wykonywany'.	pl	Kiedy wątek przechodzi do stanu 'nie wykonywany'?
 1	30	Aby zaimplementować wielowątkowość należy stworzyć klasę dziedziczącą z klasy Thread lub implementującą interfejs Runnable.	pl	Do czego służy klasa Thread
 1	31	Pakiety w Javie służą do grupowania powiązanych ze sobą klas, interfejsów i podpakietów.	pl	Co zapewniają pakiety w Javie?
 1	32	W przypadku programowania zorientowanego obiektowo najważniejsze są dane.	pl	Co jest najistotniejsze w przypadku programowania zorientowanego obiektowo?
@@ -243,7 +243,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 3	111	Hyper-V to oprogramowanie firmy Microsoft służące do wirtualizacji fizycznych maszyn. Jest komponentem systemów Windows.	pl	Część systemu Windows 10, która umożliwia wirtualizację to
 3	112	Windows Defender to komponent systemu Windows służący jako oprogramowanie antywirusowe.	pl	Część systemu Windows 10, która chroni użytkowników przed szkodliwym oprogramowaniem to
 3	113	Polecenie net localgroup skutuje wyświetleniem lokalnych grup użytkowników.	pl	Co spowoduje polecenie net localgroup na systemie Windows?
-3	114	RAID 10 polega na zrobieniu stripe mirrorów, czyli rozbicie danych na dwa dyski, a następnie wykonanie kopii każdego z dysków i zgrupowanie rarzem dysków zawierających te same dane. Wymaga to minimum 4 dysków.	pl	Do zbudowania macierzy dyskowej RAID 10, ile należy użyć dysków?
+3	114	RAID 10 polega na 'zrobieniu stripe mirrorów', czyli rozbicie danych na dwa dyski, a następnie wykonanie kopii każdego z dysków i zgrupowanie rarzem dysków zawierających te same dane. Wymaga to minimum 4 dysków.	pl	Do zbudowania macierzy dyskowej RAID 10, ile należy użyć dysków?
 3	115	HDMI to opublikowany w 2002 roku interfejs służący do przesyłania cyfrowego, nieskompresowanego sygnału audio i wideo.	pl	Interfejs HDMI pozwala na przesyłanie 
 3	116	Komparator to układ służący do porównywania dwóch liczb binarnych lub poziomów napięć.	pl	Za pomocą czego można porównać liczby binarne?
 3	117	IEEE 1284 to standard dwukierunkowego, równoległego interfejsu komunikacyjnego,	pl	Który interfejs umożliwia przesyłanie równoległe?
@@ -253,7 +253,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 3	121	Monitory kineskopowe często określa się jako monitory CRT, ponieważ CRT oznacza kineskop.	pl	Jakim skrótem określa się monitory kineskopowe?
 3	122	Scalable Link Interface (SLI) to technologia frimy NVIDIA do łączenia dwóch lub więcej kart graficznych w celu wytworzenia pojedynczego obrazu.	pl	Technologia łączenia kart graficznych opracowana przed Nvidię to
 3	123	CrossFire to technologia frimy NVIDIA do łączenia dwóch lub więcej kart graficznych w celu wytworzenia pojedynczego obrazu.	pl	Technologia łączenia kart graficznych opracowana przed AMD to
-3	124	Kompilator to oprogramowanie służące do tłumaczenia kodu źródłowego napisanego przez programistę na kod maszynowy, zrozumiały przez procesory.	pl	Zamiana kodu źródłowego na kod maszynowy jest wykonywana przez
+3	124	Kompilator to oprogramowanie służące do 'tłumaczenia' kodu źródłowego napisanego przez programistę na kod maszynowy, zrozumiały przez procesory.	pl	Zamiana kodu źródłowego na kod maszynowy jest wykonywana przez
 3	125	System Windows używa jądra hybrydowego, które łączy zalety mikrojądra i jądra monolitycznego.	pl	Jakie jądro posiada Windows 10?
 3	126	System Linux korzysta z jądra monolitycznego, co oznacza, że jest jednym wielkim procesem działającym w pojedynczej przestrzeni adresowej.	pl	Jakie jądro posiada system Linux?
 3	127	QNX to komercyjny Unixopodobny system operacyjny czasu rzeczywistego, zaprojektowany pod systemy wbudowane.	pl	Który z wymienionych systemów jest systemem czasu rzeczywistego?
@@ -265,7 +265,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 4	133	Aby utworzyć kolumnę przy tworzeniu tabeli, należy podać jej nazwę, typ oraz parametry, np. imie VARCHAR(5) NOT NULL.	pl	Który fragment polecenia CREATE TABLE jest na pewno poprawny?
 4	134	Kolumna zawierająca klucz obcy w tabeli podrzędnej musi być zawsze tego samego typu co typ klucza głównego w tabeli nadrzędnej.	pl	Kolumna zawierająca klucz obcy w tabeli podrzędnej
 4	135	% oznacza dowolną ilość znaków, podczas gdy _ oznacza pojedynczy znak.	pl	Polecenie: SELECT nazwisko FROM pracownicy WHERE nazwisko LIKE BINARY 'A%ow_'; odnajdzie między innymi pracownika o nazwisku:
-4	136	Doprowadzenie modelu do kolejnej wyższej postaci normalnej oznacza rozdrobnienie danych na więcej tabel.	pl	Doprowadzanie modelu do kolejnej wyższej postaci normalnej powoduje, że:
+4	136	Doprowadzenie modelu do kolejnej wyższej postaci normalnej oznacza 'rozdrobnienie' danych na więcej tabel.	pl	Doprowadzanie modelu do kolejnej wyższej postaci normalnej powoduje, że:
 4	137	Jednym z modułów XAMPP'a jest phpMyAdmin - oprogramowanie do zarządzania bazami opartymi na MySQL.	pl	XAMPP zawiera pakiet służący do zarządzania bazą danych pod nazwą...
 4	138	Zapytanie ORDER BY wskazuje na sposób sortowania wyniku - wskazujemy kolumnę i stwierdzamy, czy wynik ma być sortowany rosnąco, czy malejąco.	pl	By uporządkować wynik zapytania według danej kolumny, należy podsłużyć się słowem
 4	139	Zapytanie Count zwraca liczbę rekordów, spełniających pozostałe warunki zapytania.	pl	COUNT w języku SQL powoduje
@@ -314,14 +314,14 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 1	182	Events are divided into low-level - related to the physical aspects of the interface, such as mouse clicks or entering the cursor into a specific area, and semantic - sequences of low-level events, e.g., selecting a specific menu item.	eng	Choosing an item from a menu is an event of what type?
 1	183	Inheritance is used to associate classes with common elements, e.g., a Square class that inherits from a Rectangle class, which inherits from a Figure class.	eng	What is the purpose of inheritance?
 1	184	Static fields and methods are methods that are created for a class, not an object. In other words, they do not require the creation of a class instance.	eng	What are static fields and methods?
-1	185	WORA is the guiding acronym of the Java language. It stands for write once run anywhere.	eng	What does the acronym WORA stand for?
+1	185	WORA is the guiding acronym of the Java language. It stands for 'write once run anywhere.'	eng	What does the acronym WORA stand for?
 1	186	The this keyword denotes self-reference - a reference to the current object.	eng	What does the keyword this mean?
 1	187	Providing an incorrect URL address results in throwing a MalformedURLException exception.	eng	What exception is thrown for an invalid URL address?
 1	188	The correct definition of a copy constructor is A(A a) {}. The parameter passed to the constructor of class A is another object of type A.	eng	What is the correct definition of a copy constructor for class A?
 1	189	The default layout manager for the JFrame class is BorderLayout.	eng	What is the default layout manager for the JFrame class?
 1	190	In a non-static method, you can directly refer to static fields - this cannot be done in reverse.	eng	Can non-static methods directly reference static fields of a class?
 1	191	One of the main advantages of JavaFX over Swing is the planned development - it is a newer product, still supported and developed.	eng	Advantages of JavaFX compared to Swing.
-1	192	The suspend() function moves a thread to the not running state.	eng	When does a thread enter the not running state?
+1	192	The suspend() function moves a thread to the 'not running' state.	eng	When does a thread enter the 'not running' state?
 1	193	To implement multithreading, you need to create a class that inherits from the Thread class or implements the Runnable interface.	eng	What is the purpose of the Thread class?
 1	194	Packages in Java are used to group related classes, interfaces, and subpackages.	eng	What do packages provide in Java?
 1	195	In object-oriented programming, data is the most important.	eng	What is most important in object-oriented programming?
@@ -406,7 +406,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 3	274	Hyper-V is Microsoft software used for virtualizing physical machines. It is a component of Windows systems.	eng	The part of the Windows 10 system that enables virtualization is
 3	275	Windows Defender is a component of the Windows system used as antivirus software.	eng	The part of the Windows 10 system that protects users from malicious software is
 3	276	The net localgroup command displays local user groups.	eng	What does the net localgroup command do in the Windows system?
-3	277	RAID 10 involves making stripe mirrors, which means dividing data into two disks, then making a copy of each disk and grouping together disks containing the same data. This requires a minimum of 4 disks.	eng	How many disks are needed to build a RAID 10 disk array?
+3	277	RAID 10 involves 'making stripe mirrors', which means dividing data into two disks, then making a copy of each disk and grouping together disks containing the same data. This requires a minimum of 4 disks.	eng	How many disks are needed to build a RAID 10 disk array?
 3	278	HDMI is an interface published in 2002 used for transmitting digital, uncompressed audio and video signals.	eng	HDMI interface allows for
 3	279	Comparator is a circuit used for comparing two binary numbers or voltage levels.	eng	What can be used to compare binary numbers?
 3	280	IEEE 1284 is a standard for bidirectional, parallel communication interface.	eng	Which interface allows for parallel transmission?
@@ -416,7 +416,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 3	284	Cathode Ray Tube monitors are often referred to as CRT monitors because CRT stands for cathode ray tube.	eng	What acronym is used to refer to cathode ray tube monitors?
 3	285	Scalable Link Interface (SLI) is NVIDIA's technology for combining two or more graphics cards to produce a single image.	eng	The technology for connecting graphics cards developed before Nvidia is
 3	286	CrossFire is NVIDIA's technology for combining two or more graphics cards to produce a single image.	eng	The technology for connecting graphics cards developed before AMD is
-3	287	A compiler is software used to translate source code written by a programmer into machine code understood by processors.	eng	Converting source code to machine code is done by
+3	287	A compiler is software used to 'translate' source code written by a programmer into machine code understood by processors.	eng	Converting source code to machine code is done by
 3	288	The Windows system uses a hybrid kernel, which combines the advantages of microkernel and monolithic kernel.	eng	What kernel does Windows 10 have?
 3	289	The Linux system uses a monolithic kernel, meaning it is a single large process running in a single address space.	eng	What kernel does the Linux system have?
 3	290	QNX is a commercial Unix-like real-time operating system designed for embedded systems.	eng	Which of the listed systems is a real-time operating system?
@@ -428,7 +428,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 4	296	To create a column when creating a table, you need to provide its name, type, and parameters, for example, name VARCHAR(5) NOT NULL.	eng	Which fragment of the CREATE TABLE command is definitely correct?
 4	297	The column containing a foreign key in the child table must always be of the same type as the primary key type in the parent table.	eng	Column containing a foreign key in the child table
 4	298	% means any number of characters, while _ means a single character.	eng	Query: SELECT lastname FROM employees WHERE lastname LIKE BINARY 'A%ow_'; will find, among others, an employee with the last name:
-4	299	Bringing the model to the next higher normal form means fragmenting data into more tables.	eng	Bringing the model to the next higher normal form causes:
+4	299	Bringing the model to the next higher normal form means 'fragmenting' data into more tables.	eng	Bringing the model to the next higher normal form causes:
 4	300	One of XAMPP's modules is phpMyAdmin - software for managing MySQL-based databases.	eng	XAMPP contains a package for managing databases called...
 4	301	The ORDER BY clause in a query indicates the way the result is sorted - we specify the column and determine whether the result should be sorted in ascending or descending order.	eng	To sort the query result according to a specific column, you should use the keyword:
 4	302	The Count query returns the number of records that meet the remaining query conditions.	eng	COUNT in SQL causes:
@@ -460,7 +460,7 @@ COPY public.cards (category, id, answer, lang, question) FROM stdin;
 
 
 --
--- TOC entry 3360 (class 0 OID 16398)
+-- TOC entry 3360 (class 0 OID 16448)
 -- Dependencies: 218
 -- Data for Name: questions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -494,7 +494,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 1	26	FlowLayout	null	GridLayout	BorderLayout	pl	Jaki jest domyślny menedżer rozkładu dla klasy JFrame?
 1	27	nie	żależy od wywołania metody	Zależy od typu statyczności	tak	pl	Czy w metodzie niestatycznej można bezpośrednio odwoływać się do pól statycznych klasy?
 1	28	Więcej komponentów	większa popularność	szybkość działania	Planowany rozwój	pl	Zalety JavaFX w stosunku do Swing
-1	29	koniec metody run()	stop	pause	suspend	pl	Kiedy wątek przechodzi do stanu nie wykonywany?
+1	29	koniec metody run()	stop	pause	suspend	pl	Kiedy wątek przechodzi do stanu 'nie wykonywany'?
 1	30	Do implementacji serializacji	Do implementacji enkapsulacji	do implementacji obsługi wyjątków	do implementacji wielowątkowości	pl	Do czego służy klasa Thread
 1	31	ułatwiają kompilacje	ułatwiają generowanie plików JAR	optymalizują działanie programów	ochronę składników	pl	Co zapewniają pakiety w Javie?
 1	32	bezpieczeństwo	proces	elastyczność kodu	Dane	pl	Co jest najistotniejsze w przypadku programowania zorientowanego obiektowo?
@@ -515,7 +515,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 1	47	wywołując funkcję x.length()	wywołując funkcję sort(x)	wywołując funkcję count(x)	wykorzystując pole x.length	pl	Jak można sprawdzić długość tablicy integerów w Javie?
 1	48	java.io	java.math	java.awt	java.util	pl	W jakiej klasie znajduje się typ Array?
 1	49	metodą parseToOct	rzutując wartość dziesiętną	dzieląc wartość szesnastkową przez 2	odpowiedni format literału	pl	Jak zapisać wartość w systemie ósemkowym?
-1	50	klasy adoptowane przez klasy nadrzędne	inaczej klasy polimorficzne	\N	klasy z pustymi metodami dla interfejsów	pl	Co to są klasy adaptacyjne?
+1	50	klasy adoptowane przez klasy nadrzędne	inaczej klasy polimorficzne	klasy zmieniające swoje zachowanie	klasy z pustymi metodami dla interfejsów	pl	Co to są klasy adaptacyjne?
 2	51	D2	G2D	nie ma takiego skrótu	2D	pl	Grafikę dwuwymiarową określa się skrótem
 2	52	Adobe Photoshop	Corel Draw	AutoCAD	Gimp	pl	Który z wymienionych programów jest na licencji GNU GPL?
 2	53	Duży rozmiar	Brak możliwość utworzenia animacji	Działa tylko na niewielu platformach	Ograniczenie do 256 kolorów	pl	Jaka jest największa wada rozszerzenia GIF?
@@ -605,9 +605,9 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 4	137	ALTER TABLE Customers ADD varchar(255) EMAIL;	ALTER  Customers ADD Email varchar(255);	ALTER TABLE Customers CREATE Email varchar(255);	ALTER TABLE Customers ADD Email varchar(255);	pl	Który polecenie jest poprawne?
 4	138	w modelu pojawia się mniej tabel	baza danych działa szybciej	rośnie ilość powtórzonych rekordów	w modelu pojawia się coraz więcej tabel	pl	Doprowadzanie modelu do kolejnej wyższej postaci normalnej powoduje, że:
 4	139	Microsoft SQL Server	Toad	DBBeaver	phpMyAdmin	pl	XAMPP zawiera pakiet służący do zarządzania bazą danych pod nazwą...
-4	140	SELECT nazwisko FROM Pracownicy WHERE nazwisko = %i;	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE ?i;	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE ^i;	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE %i;	pl	Zapytanie, dzięki któremu z tabeli Pracownicy wyświetlą się nazwiska, w których ostatnią literą jest i
+4	140	SELECT nazwisko FROM Pracownicy WHERE nazwisko = '%i';	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE '?i';	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE '^i';	SELECT nazwisko FROM Pracownicy WHERE nazwisko LIKE '%i';	pl	Zapytanie, dzięki któremu z tabeli Pracownicy wyświetlą się nazwiska, w których ostatnią literą jest 'i'
 4	141	SQL	PostgreSQL	MySQL	NoSQL	pl	Która z wymienionych baz danych nie jest relacyjna?
-4	142	pgAdmin	DBBeaver	MariaDB	MongoDB	pl	Który program umożliwi zarządzanie nierelacyjną bazą danych?
+4	142	\N	DBBeaver	MariaDB	pgAdmin	pl	Który program umożliwi zarządzanie nierelacyjną bazą danych?
 4	143	ORDER	SORT	ORDERBY	ORDER BY	pl	By uporządkować wynik zapytania według danej kolumny, należy podsłużyć się atrybutem
 4	144	AGREGATE()	COUNTING()	LIST()	COUNT()	pl	Funkcja argregująca zwaracną liczbę rekordów to
 4	145	AVERAGE()	MEAN()	COUNT()	AVG()	pl	Funkcja obliczająca średnią ze zwracanych wartości rekordów to
@@ -626,7 +626,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 4	158	SELECT COPY	COPY	ALTER TABLE nazwa_tabeli COPY	SELECT INTO	pl	W jaki sposób można skopiować dane z jednej tabeli do drugiej?
 4	159	SELECT * 	SELECT UNIQUE	UNIQUE	SELECT DISTINCT	pl	Jaką instrukcją należy się posłużyć, żeby zapytanie zwróciło rekordy bez powtórzeń?
 4	160	SELECT * FROM Customers NOT WHERE Country = 'Poland';	SELECT ALTERNATIVE * FROM Customers WHERE Country = 'Poland';	SELECT NOT * FROM Customers WHERE Country = 'Poland';	SELECT * FROM Customers WHERE NOT Country = 'Poland';	pl	Które polecenie jest poprawne?
-4	161	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = ;	SELECT * FROM table WHERE column IS NULL;	pl	Jak sprawdzić w zapytaniu czy dana wartość wynosi NULL?
+4	161	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = 'NULL';	SELECT * FROM table WHERE column = '';	SELECT * FROM table WHERE column IS NULL;	pl	Jak sprawdzić w zapytaniu czy dana wartość wynosi NULL?
 4	162	ALTER TABLE Customers SET ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers SET ContactName = 'Andrzej H' AND City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers ON ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers SET ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	pl	Które zapytanie jest poprawne?
 4	163	DELETE table_name;	REMOVE table_name;	ALTER TABLE table_name DELETE ALL;	DELETE FROM table_name;	pl	W jaki sposób można usunąć wszystkie rekordy bez usunięcia tabeli?
 4	164	DELETE table_name;	REMOVE table_name;	DELETE FROM table_name;	DROP TABLE table_name;	pl	W jaki sposób mozna usunąć całą tabelę?
@@ -664,7 +664,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 1	196	FlowLayout	null	GridLayout	BorderLayout	eng	What is the default layout manager for the JFrame class?
 1	197	no	depends on the method call	Depends on the level of staticness	yes	eng	Can non-static methods directly reference static fields of a class?
 1	198	More components	greater popularity	Program speed	Planned development	eng	Advantages of JavaFX compared to Swing.
-1	199	end of the run() method	stop	Pause	suspend	eng	When does a thread enter the not running state?
+1	199	end of the run() method	stop	Pause	suspend	eng	When does a thread enter the 'not running' state?
 1	200	For serialization implementation	For implementing encapsulation	For exception handling implementation	for implementing multithreading	eng	What is the purpose of the Thread class?
 1	201	facilitate compilation	facilitate JAR file generation	Optimize program performance	component protection	eng	What do packages provide in Java?
 1	202	security	process	Code flexibility	Data	eng	What is most important in object-oriented programming?
@@ -775,9 +775,9 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 4	307	ALTER TABLE Customers ADD varchar(255) EMAIL;	ALTER Customers ADD Email varchar(255);	ALTER TABLE Customers CREATE Email varchar(255);	ALTER TABLE Customers ADD Email varchar(255);	eng	Which command is correct?
 4	308	There are fewer tables in the model	The database works faster	The number of duplicate records increases	The model is getting more and more tables	eng	Bringing a model to the next higher normal form causes:
 4	309	Microsoft SQL Server	Toad	DBBeaver	phpMyAdmin	eng	XAMPP includes a package for managing databases called...
-4	310	SELECT surname FROM Employees WHERE surname = %i;	SELECT surname FROM Employees WHERE surname LIKE ?i;	SELECT surname FROM Employees WHERE surname LIKE ^i;	SELECT surname FROM Employees WHERE surname LIKE %i;	eng	A query that displays surnames from the Employees table where the last letter is i is:
+4	310	SELECT surname FROM Employees WHERE surname = '%i';	SELECT surname FROM Employees WHERE surname LIKE '?i';	SELECT surname FROM Employees WHERE surname LIKE '^i';	SELECT surname FROM Employees WHERE surname LIKE '%i';	eng	A query that displays surnames from the Employees table where the last letter is 'i' is:
 4	311	SQL	PostgreSQL	MySQL	NoSQL	eng	Which of the listed databases is not relational?
-4	312	pgAdmin	DBBeaver	MariaDB	MongoDB	eng	Which program enables managing a non-relational database?
+4	312	\N	DBBeaver	MariaDB	pgAdmin	eng	Which program enables managing a non-relational database?
 4	313	ORDER	SORT	ORDER BY	ORDER BY	eng	To sort the query result by a specific column, you need to use the attribute:
 4	314	AGGREGATE()	COUNTING()	LIST()	COUNT()	eng	The aggregate function returning the number of records is
 4	315	AVERAGE()	MEAN()	COUNT()	AVG()	eng	The function calculating the average of returned record values is
@@ -796,7 +796,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 4	328	SELECT COPY	COPY	ALTER TABLE table_name COPY	SELECT INTO	eng	How can you copy data from one table to another?
 4	329	SELECT *	SELECT UNIQUE	UNIQUE	SELECT DISTINCT	eng	Which instruction should be used to return records without repetitions?
 4	330	SELECT * FROM Customers NOT WHERE Country = 'Poland';	SELECT * FROM Customers WHERE Country = 'Poland';	SELECT NOT * FROM Customers WHERE Country = 'Poland';	SELECT * FROM Customers WHERE NOT Country = 'Poland';	eng	Which command is correct?
-4	331	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = ;	SELECT * FROM table WHERE column IS NULL;	eng	How to check in a query if a certain value is NULL?
+4	331	SELECT * FROM table WHERE column = NULL;	SELECT * FROM table WHERE column = 'NULL';	SELECT * FROM table WHERE column = '';	SELECT * FROM table WHERE column IS NULL;	eng	How to check in a query if a certain value is NULL?
 4	332	ALTER TABLE Customers SET ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers SET ContactName = 'Andrzej H' AND City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers SET ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	UPDATE Customers SET ContactName = 'Andrzej H', City= 'BERLIN' WHERE CustomerID = 1;	eng	Which query is correct?
 4	333	DELETE table_name;	REMOVE table_name;	ALTER TABLE table_name DELETE ALL;	DELETE FROM table_name;	eng	How to delete all records without deleting the table?
 4	334	DELETE table_name;	REMOVE table_name;	DELETE FROM table_name;	DROP TABLE table_name;	eng	How to delete an entire table?
@@ -810,7 +810,7 @@ COPY public.questions (category, id, answer_a, answer_b, answer_c, answer_correc
 
 
 --
--- TOC entry 3368 (class 0 OID 0)
+-- TOC entry 3369 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: cards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -819,7 +819,7 @@ SELECT pg_catalog.setval('public.cards_id_seq', 326, true);
 
 
 --
--- TOC entry 3369 (class 0 OID 0)
+-- TOC entry 3370 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -828,7 +828,7 @@ SELECT pg_catalog.setval('public.questions_id_seq', 340, true);
 
 
 --
--- TOC entry 3211 (class 2606 OID 16396)
+-- TOC entry 3211 (class 2606 OID 16446)
 -- Name: cards cards_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -837,7 +837,7 @@ ALTER TABLE ONLY public.cards
 
 
 --
--- TOC entry 3213 (class 2606 OID 16405)
+-- TOC entry 3213 (class 2606 OID 16455)
 -- Name: questions questions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -845,7 +845,7 @@ ALTER TABLE ONLY public.questions
     ADD CONSTRAINT questions_pkey PRIMARY KEY (id);
 
 
--- Completed on 2024-05-07 18:19:47 UTC
+-- Completed on 2024-05-09 14:39:32 UTC
 
 --
 -- PostgreSQL database dump complete
