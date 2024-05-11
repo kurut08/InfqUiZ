@@ -12,5 +12,91 @@ code {
     monospace;
 }
 
+:root {
+  --header-background: #f8f9fa;
+  --border-color: #dee2e6;
+  --content-background: #ffffff;
+  --button-background: #dee3ea;
+  --button-border-color: #a1a5a9;
+  --button-box-shadow: rgba(0, 0, 0, 0.1);
+  --home-navigation-button-hover-background: #e9ecef;
+  --footer-background: #f8f9fa;
+  --footer-border-color: #dee2e6;
+  --corpo-text-color: black;
+
+  --front-background: white;
+  --front-back-text-color: black;
+  --back-background: #f8f9fa;
+
+
+  --quick-question-random-question-color: #000000;
+  --quick-question-corpo-text-color: black;
+  --answer-correct-background: #32CD32;
+  --answer-color: white;
+  --answer-incorrect-background: #FF6347;
+
+
+  --test-answer-background: #dee3ea;
+  --test-answer-border-color: #a1a5a9;
+  --test-answer-selected-background: #87CEEB;
+  --test-answer-selected-color: white;
+  --test-check-results-background: #ffffff;
+  --test-check-results-color: #000000;
+  --test-check-results-border-color: #a1a5a9;
+  --test-answer-correct-background: #32CD32;
+  --test-answer-correct-color: white;
+
+
+  --tests-test-content-background: #ffffff;
+  --tests-test-button-background: #ffffff;
+  --tests-test-button-color: #000000;
+  --tests-test-button-border-color: #a1a5a9;
+
+  --toggle-label-color: #212529;
+  --toggle-background-color: #e9ecef;
+  --toggle-handle-color: #007bff;
+}
+
+[data-theme="dark"] {
+  --header-background: #343a40;
+  --border-color: #495057;
+  --content-background: #212529;
+  --button-background: #495057;
+  --button-border-color: #495057;
+  --button-box-shadow: rgba(255, 255, 255, 0.1);
+  --home-navigation-button-hover-background: #495057;
+  --footer-background: #343a40;
+  --footer-border-color: #495057;
+  --corpo-text-color: white;
+
+  --front-background: #343a40;
+  --front-back-text-color: white;
+  --back-background: #212529;
+
+  --quick-question-random-question-color: white;
+  --quick-question-corpo-text-color: white;
+  --answer-correct-background: #28a745;
+  --answer-color: white;
+  --answer-incorrect-background: #dc3545;
+
+  --test-answer-background: #212529;
+  --test-answer-border-color: #495057;
+  --test-answer-selected-background: #17a2b8;
+  --test-answer-selected-color: white;
+  --test-check-results-background: #343a40;
+  --test-check-results-color: white;
+  --test-check-results-border-color: #495057;
+  --test-answer-correct-background: #28a745;
+  --test-answer-correct-color: white;
+
+  --tests-test-content-background: #212529;
+  --tests-test-button-background: #495057;
+  --tests-test-button-color: white;
+  --tests-test-button-border-color: #495057;
+
+  --toggle-label-color: white;
+  --toggle-background-color: #464f56;
+  --toggle-handle-color: #007bff;
+}
 
 

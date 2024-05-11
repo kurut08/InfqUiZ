@@ -1,10 +1,6 @@
-
-.testList{
-
-}
 .answer {
-    background-color: #dee3ea;
-    border: 1px solid #a1a5a9;
+    background-color: var(--test-answer-background);
+    border: 1px solid var(--test-answer-border-color);
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
@@ -19,22 +15,23 @@
     margin: 0;
 }
 
-#quick-question-result {
+#test-result {
     display: block;
     clear: both;
     margin-top: 20px;
     text-align: center;
 }
+
 .answer.selected {
-    background-color: #87CEEB;
-    color: white;
+    background-color: var(--test-answer-selected-background);
+    color: var(--test-answer-selected-color);
 }
 
 #checkResults {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--test-check-results-background);
+    color: var(--test-check-results-color);
     padding: 10px 20px;
-    border: 1px solid #a1a5a9;
+    border: 1px solid var(--test-check-results-border-color);
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -42,10 +39,14 @@
     text-align: center;
     margin: 10px 0;
     transition: background-color 0.3s;
-
 }
 
 .answer.correct {
-    background-color: #32CD32;
-    color: white;
+    background-color: var(--test-answer-correct-background);
+    color: var(--test-answer-correct-color);
+}
+
+#testList {
+    width: 80vw;
+    color: var(--quick-question-random-question-color);
 }

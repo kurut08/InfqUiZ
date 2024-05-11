@@ -37,13 +37,13 @@ const TestList = ({ array }) => {
     return (
         <div id="testList">
             {array.map((innerArray, index) => (
-                <div key={index} style={{textAlign: 'center'}}>
+                <div key={index} style={{textAlign: 'center', marginTop:'1%'}}>
                     <div>{index+1}. {innerArray[4]}</div>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
                     }}>
                         {innerArray.slice(0, 4).map((option, idx) => {
                             const isSelected = selectedAnswers[index] === option;
@@ -66,7 +66,7 @@ const TestList = ({ array }) => {
             ))}
 
             {score !== null && (
-                <div id="quick-question-result">
+                <div id="test-result">
                     {t("test.score")}: {score}/20
                 </div>
             )}

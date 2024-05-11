@@ -3,6 +3,7 @@ import React from "react";
 import logo from '../../logo.png';
 import {useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {Toggle} from "../Toggle/Toggle";
 
 function Home() {
     const navigate = useNavigate();
@@ -38,10 +39,13 @@ function Home() {
                             src={logo}
                             alt="App Logo" className="app-logo"/>
                     </div>
+                    <div className="toggle-container">
+                        <Toggle/>
+                    </div>
                 </div>
                 <div id="main-content">
                     <div id="main-navigation">
-                        <div className="navigation-button" onClick={navigateToQuickQuestion}>
+                    <div className="navigation-button" onClick={navigateToQuickQuestion}>
                             <h1>{t("home.quick.question")}</h1>
                         </div>
                         <div className="navigation-button" onClick={navigateToTests}>

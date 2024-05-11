@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import {useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import TestList from './TestList';
+import {Toggle} from "../Toggle/Toggle";
 
 function Tests() {
     const navigate = useNavigate();
@@ -18,6 +19,19 @@ function Tests() {
     const navigateToHome = () => {
         navigate('/');
     };
+
+    const navigateToQuickQuestion = () => {
+        navigate('/quickQuestion');
+    };
+
+    const navigateToTests = () => {
+        navigate('/tests/category', {
+            state: {
+                type: 'tests'
+            }
+        });
+    };
+
     useEffect(()=>{
         getTest();
         }, [])
@@ -78,10 +92,15 @@ function Tests() {
             <div id="test-page">
                 <div id="header">
                     <div className="logo-container" onClick={navigateToHome}>
-                        <img
-                            src={logo}
-                            alt="App Logo" className="app-logo"/>
-                            
+                        <img src={logo} alt="App Logo" className="app-logo"/>
+                    </div>
+                    <div className="nav-container">
+                        <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
+                        <div className="nav-item" onClick={navigateToHome}>Home</div>
+                        <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
+                    </div>
+                    <div className="toggle-container">
+                        <Toggle/>
                     </div>
                 </div>
                 <div id="test-content">
@@ -93,12 +112,12 @@ function Tests() {
                     <div id="test-questions"></div>
                     <div id="quick-question-result"></div>
                 </div>
-                
+
                 <div className="footer">
                     <h4 id="corpo">SSR Association</h4>
                 </div>
             </div>
-        
+
         </div>
     );
 

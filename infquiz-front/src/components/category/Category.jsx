@@ -3,6 +3,7 @@ import React from "react";
 import logo from '../../logo.png';
 import {useNavigate, useLocation} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Toggle} from "../Toggle/Toggle";
 
 
 function Category() {
@@ -40,6 +41,18 @@ function Category() {
     const navigateToHome = () => {
         navigate('/');
     };
+
+    const navigateToQuickQuestion = () => {
+        navigate('/quickQuestion');
+    };
+
+    const navigateToTests = () => {
+        navigate('/tests/category', {
+            state: {
+                type: 'tests'
+            }
+        });
+    };
     const { t, i18n } = useTranslation();
 
     return(
@@ -47,9 +60,15 @@ function Category() {
             <div id="category-page">
                 <div id="header">
                     <div className="logo-container" onClick={navigateToHome}>
-                        <img
-                            src={logo}
-                            alt="App Logo" className="app-logo"/>
+                        <img src={logo} alt="App Logo" className="app-logo"/>
+                    </div>
+                    <div className="nav-container">
+                        <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
+                        <div className="nav-item" onClick={navigateToHome}>Home</div>
+                        <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
+                    </div>
+                    <div className="toggle-container">
+                        <Toggle/>
                     </div>
                 </div>
                 <div id="category-content">
