@@ -1,7 +1,7 @@
 package com.app.InfqUiZ.Models;
 
 import jakarta.persistence.*;
-
+//Class for creating Cards entity in database with given fields
 @Entity
 public class Cards {
     @Id

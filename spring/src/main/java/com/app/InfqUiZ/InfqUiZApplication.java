@@ -1,21 +1,12 @@
 package com.app.InfqUiZ;
 
-import com.app.InfqUiZ.Repository.CardsRepository;
-import com.app.InfqUiZ.Repository.QuestionsRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
+//Main class to run application
 @SpringBootApplication
 public class InfqUiZApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InfqUiZApplication.class, args);
-	}
-	@Bean
-	CommandLineRunner run(QuestionsRepository questionsRepository, CardsRepository cardsRepository){
-		return args ->{
-		};
 	}
 }
