@@ -1,6 +1,7 @@
 import './QuickQuestion.css';
 import React, { useState } from "react";
-import logo from '../../logo.png';
+import logoLight from '../../logo.png';
+import logoDark from '../../logo_dark.png'
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {Toggle} from "../Toggle/Toggle";
@@ -15,6 +16,15 @@ function QuickQuestion() {
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
     const navigate = useNavigate();
     const { t } = useTranslation();
+
+    const themes = {
+        light: {
+            logo: logoLight,
+        },
+        dark: {
+            logo: logoDark,
+        }
+    };
 
     const navigateToHome = () => {
         navigate('/');
@@ -69,14 +79,14 @@ function QuickQuestion() {
         <div id="quick-question-page">
             <div id="header">
                 <div className="logo-container" onClick={navigateToHome}>
-                    <img src={logo} alt="App Logo" className="app-logo"/>
+                    <img src={themes[localStorage.getItem("selectedTheme")].logo} alt="App Logo" className="app-logo"/>
                 </div>
                 <div className="nav-container">
                     <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
                     <div className="nav-item" onClick={navigateToHome}>Home</div>
                     <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
                 </div>
-                <div className="toggle-container">
+                <div className="toggle-container" onClick={navigateToQuickQuestion}>
                     <Toggle/>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import './Tests.css';
 import React, { useState, useEffect } from "react";
-import logo from '../../logo.png';
+import logoLight from '../../logo.png';
+import logoDark from '../../logo_dark.png'
 import ReactDOM from "react-dom/client";
 import {useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -20,6 +21,15 @@ function Tests() {
         navigate('/');
     };
 
+    const themes = {
+        light: {
+            logo: logoLight,
+        },
+        dark: {
+            logo: logoDark,
+        }
+    };
+
     const navigateToQuickQuestion = () => {
         navigate('/quickQuestion');
     };
@@ -31,6 +41,10 @@ function Tests() {
             }
         });
     };
+
+    const navigateHere = () =>{
+        navigate('.', { replace: true });
+    }
 
     useEffect(()=>{
         getTest();
@@ -92,14 +106,14 @@ function Tests() {
             <div id="test-page">
                 <div id="header">
                     <div className="logo-container" onClick={navigateToHome}>
-                        <img src={logo} alt="App Logo" className="app-logo"/>
+                        <img src={themes[localStorage.getItem("selectedTheme")].logo} alt="App Logo" className="app-logo"/>
                     </div>
                     <div className="nav-container">
                         <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
                         <div className="nav-item" onClick={navigateToHome}>Home</div>
                         <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
                     </div>
-                    <div className="toggle-container">
+                    <div className="toggle-container" onClick={navigateHere}>
                         <Toggle/>
                     </div>
                 </div>
