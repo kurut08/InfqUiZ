@@ -42,7 +42,7 @@ Creating an account is not necessary.
 ## Run the application
 -Launch **IntelliJ** and **Docker**\
 -Open **docker-compose.yml** in InfqUiZ/docker and wait until there are no changes in the **Services** tab\
--Open **InfqUiZApplcation.java** in InfqUiZ/spring/src/main/java/com/app/InfqUiZ\
+-Open **InfqUiZApplication.java** in InfqUiZ/spring/src/main/java/com/app/InfqUiZ\
 -Open **Terminal** tab, type `cd infquiz-front` and use `npm install` command\
 -After there are no changes in the Terminal tab, use `npm start` command
     
