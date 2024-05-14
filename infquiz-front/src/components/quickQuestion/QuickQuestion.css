@@ -6,11 +6,11 @@
 }
 
 #header {
-    background-color: #f8f9fa;
+    background-color: var(--header-background);
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid var(--border-color);
 }
 
 .logo-container img {
@@ -23,13 +23,16 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    flex-grow: 1;
+    width: 99vw;
+    background-color: var(--content-background);
 }
 
 #getRandomQuestion {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--content-background);
+    color: var(--quick-question-random-question-color);
     padding: 10px 20px;
-    border: 1px solid #a1a5a9;
+    border: 1px solid var(--button-border-color);
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -37,51 +40,49 @@
     text-align: center;
     margin: 10px 0;
     transition: background-color 0.3s;
-
 }
 
 .btn-question {
     margin-bottom: 20px;
 }
 
-/* Styl dla pytania */
 .question {
     margin-bottom: 10px;
+    color: var(--quick-question-random-question-color);
 }
 
-/* Styl dla odpowiedzi */
 .answer {
-    width: 80%;
+    width: 40%;
     margin-bottom: 10px;
     padding: 10px;
     text-align: left;
     border-radius: 5px;
     cursor: pointer;
+    color: var(--quick-question-random-question-color);
 }
 
 .footer {
-    background-color: #f8f9fa;
-    color: #ffffff;
+    background-color: var(--footer-background);
     text-align: end;
     margin-top: auto;
     min-width: 100%;
     align-items: end;
     justify-content: flex-start;
-    border-top: 2px solid #dee2e6;
+    border-top: 2px solid var(--border-color);
     bottom: 0;
 }
 
 #corpo {
     margin-right: 1%;
-    color: black;
+    color: var(--corpo-text-color);
 }
 
 .answer.correct {
-    background-color: #32CD32;
-    color: white;
+    background-color: var(--answer-correct-background);
+    color: var(--answer-color);
 }
 
 .answer.incorrect {
-    background-color: #FF6347;
-    color: white;
+    background-color: var(--answer-incorrect-background);
+    color: var(--answer-color);
 }

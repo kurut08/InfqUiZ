@@ -1,8 +1,10 @@
 import './Flashcards.css';
 import React, {useState, useEffect} from "react";
-import logo from "../../logo.png";
+import logoLight from '../../logo.png';
+import logoDark from '../../logo_dark.png'
 import { useLocation, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {Toggle} from "../Toggle/Toggle";
 
 function Flashcards() {
     const navigate = useNavigate();
@@ -17,8 +19,31 @@ function Flashcards() {
             getFlashCard();
         }
     };
+    const themes = {
+        light: {
+            logo: logoLight,
+        },
+        dark: {
+            logo: logoDark,
+        }
+    };
     const navigateToHome = () => {
         navigate('/');
+    };
+
+    const navigateToQuickQuestion = () => {
+        navigate('/quickQuestion');
+    };
+
+    const navigateHere = () =>{
+        navigate('.', { replace: true });
+    }
+    const navigateToTests = () => {
+        navigate('/tests/category', {
+            state: {
+                type: 'tests'
+            }
+        });
     };
 
     useEffect(()=>{
@@ -44,10 +69,18 @@ function Flashcards() {
         <div id="flashcard-page">
             <div id="header">
                 <div className="logo-container" onClick={navigateToHome}>
-                    <img src={logo} alt="App Logo" className="app-logo"/>
+                    <img src={themes[localStorage.getItem("selectedTheme")].logo} alt="App Logo" className="app-logo"/>
+                </div>
+                <div className="nav-container">
+                    <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
+                    <div className="nav-item" onClick={navigateToHome}>Home</div>
+                    <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
+                </div>
+                <div className="toggle-container" onClick={navigateHere}>
+                    <Toggle/>
                 </div>
             </div>
-            <div id="flashcard-container" >
+            <div id="flashcard-container">
                 <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
                     <div className="front">
                         <p>{card.question}</p>

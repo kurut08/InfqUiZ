@@ -1,8 +1,10 @@
 import './Category.css';
 import React from "react";
-import logo from '../../logo.png';
+import logoLight from '../../logo.png';
+import logoDark from '../../logo_dark.png'
 import {useNavigate, useLocation} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Toggle} from "../Toggle/Toggle";
 
 
 function Category() {
@@ -15,6 +17,14 @@ function Category() {
                 category: '1'
             }
         });
+    };
+    const themes = {
+        light: {
+            logo: logoLight,
+        },
+        dark: {
+            logo: logoDark,
+        }
     };
     const navigateToComputerGraphics = () => {
         navigate('/'+type+'/category/2', {
@@ -40,6 +50,22 @@ function Category() {
     const navigateToHome = () => {
         navigate('/');
     };
+
+    const navigateToQuickQuestion = () => {
+        navigate('/quickQuestion');
+    };
+
+    const navigateToTests = () => {
+        navigate('/tests/category', {
+            state: {
+                type: 'tests'
+            }
+        });
+    };
+
+    const navigateHere = () =>{
+        navigate('.', { replace: true });
+    }
     const { t, i18n } = useTranslation();
 
     return(
@@ -47,9 +73,15 @@ function Category() {
             <div id="category-page">
                 <div id="header">
                     <div className="logo-container" onClick={navigateToHome}>
-                        <img
-                            src={logo}
-                            alt="App Logo" className="app-logo"/>
+                        <img src={themes[localStorage.getItem("selectedTheme")].logo} alt="App Logo" className="app-logo"/>
+                    </div>
+                    <div className="nav-container">
+                        <div className="nav-item" onClick={navigateToQuickQuestion}>{t("home.quick.question")}</div>
+                        <div className="nav-item" onClick={navigateToHome}>Home</div>
+                        <div className="nav-item" onClick={navigateToTests}>{t("home.40questions")}</div>
+                    </div>
+                    <div className="toggle-container" onClick={navigateHere}>
+                        <Toggle/>
                     </div>
                 </div>
                 <div id="category-content">

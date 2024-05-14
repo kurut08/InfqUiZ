@@ -6,50 +6,47 @@
 }
 
 #header {
-    background-color: #f8f9fa;
+    background-color: var(--header-background);
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid var(--border-color);
 }
 
 .logo-container img {
     max-width: 100px;
-    margin: 10%;
+    margin-top: 10%;
+    margin-left: 10%;
 }
+
 #flashcard-container {
     display: flex;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(--content-background);
     width: 100%;
     flex-grow: 1;
-
-
 }
-
 
 .flashcard {
     margin: 10% 35%;
     flex: 50%;
     transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #dee3ea;
-    border-radius: 0px;
-    border: 2px solid #a1a5a9;
+    box-shadow: var(--button-box-shadow);
+    background-color: var(--button-background);
+    border-radius: 0;
+    border: 2px solid var(--button-border-color);
     cursor: pointer;
     width: 100%;
-
 }
 
-.flashcard.flipped > .front{
+.flashcard.flipped > .front {
     transform: perspective(600px) rotateY(180deg);
 }
 
-.flashcard.flipped > .back{
+.flashcard.flipped > .back {
     transform: perspective(600px) rotateY(0deg);
 }
-
 
 .front, .back {
     position: absolute;
@@ -59,54 +56,34 @@
 }
 
 .front {
-    background-color: white;
-    color: black;
+    background-color: var(--front-background);
+    color: var(--front-back-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .back {
-    background-color: #f8f9fa;
-    color: black;
+    background-color: var(--back-background);
+    color: var(--front-back-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg);
 }
 
-#arrow-left {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-
-    font-size: 24px;
-    cursor: pointer;
-}
-
-
-#arrow-right {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-
 .footer {
-    background-color: #f8f9fa;
-    color: #ffffff;
+    background-color: var(--footer-background);
     text-align: end;
     margin-top: auto;
     min-width: 100%;
     align-items: end;
     justify-content: flex-start;
-    border-top: 2px solid #dee2e6;
+    border-top: 2px solid var(--footer-border-color);
     bottom: 0;
 }
 
 #corpo {
     margin-right: 1%;
-    color: black;
+    color: var(--corpo-text-color);
 }
